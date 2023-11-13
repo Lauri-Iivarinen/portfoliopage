@@ -6,4 +6,4 @@ Suite Teardown    Close all browsers
 *** Test Cases ***
 Browser opens inside docker
     When User has home page open in browser
-    Wait Until Element Is Visible    xpath://*[contains(text(), 'homepage')]
+    Wait Until Element Is Visible    xpath://*[contains(text(), ':D')]
