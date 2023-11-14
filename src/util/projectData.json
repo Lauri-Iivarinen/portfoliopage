@@ -1,0 +1,74 @@
+[
+    {
+        "project": "Groupcalendar",
+        "school": true,
+        "group": false,
+        "description": "description here",
+        "technologies": ["Java", "Spring Boot", "SQL", "Relational databases"],
+        "link": "https://github.com/Lauri-Iivarinen/groupcalendar"
+    },
+    {
+        "project": "Movie Recommendations",
+        "school": true,
+        "group": false,
+        "description": "description here",
+        "technologies": ["JavaScript", "React", "Express", "Relational databases", "SQL", "Component Libraries"],
+        "link": "https://github.com/Lauri-Iivarinen/REACT-MovieRecommendations"
+    },
+    {
+        "project": "Warspear Offline",
+        "school": true,
+        "group": false,
+        "description": "description here",
+        "technologies": ["Python", "Pygame"],
+        "link": "https://github.com/Lauri-Iivarinen/Pygame-WarspearOffline"
+    },
+    {
+        "project": "Ground Source Heat Pump",
+        "school": true,
+        "group": false,
+        "description": "description here",
+        "technologies": ["TypeScript", "React Native", "Component Libraries"],
+        "link": "https://github.com/Lauri-Iivarinen/ReactNative-maalampopumppu"
+    },
+    {
+        "project": "Spotmap",
+        "school": false,
+        "group": false,
+        "description": "description here",
+        "technologies": ["Java", "Spring Boot", "React Native", "TypeScript", "Component Libraries", "SQL", "Relational databases"],
+        "link": "https://github.com/Lauri-Iivarinen/spotmap"
+    },
+    {
+        "project": "Discord Bot",
+        "school": false,
+        "group": false,
+        "description": "description here",
+        "technologies": ["JavaScript"],
+        "link": "https://github.com/Lauri-Iivarinen/DiscordBot1"
+    },
+    {
+        "project": "Advent of Code",
+        "school": false,
+        "group": false,
+        "description": "description here",
+        "technologies": ["Python"],
+        "link": "https://github.com/Lauri-Iivarinen/adventOfCode"
+    },
+    {
+        "project": "Efilibrary",
+        "school": true,
+        "group": true,
+        "description": "description here",
+        "technologies": ["TypeScript", "Express", "React", "SQL", "Relational databases", "Docker", "Robot Framework", "GitHub actions"],
+        "link": "https://github.com/LibraryProjectGroup"
+    },
+    {
+        "project": "Mobile Chess Game",
+        "school": true,
+        "group": true,
+        "description": "description here",
+        "technologies": ["TypeScript", "React Native", "Express", "Socket.io"],
+        "link": "https://github.com/OP2-CheckMate"
+    }
+]

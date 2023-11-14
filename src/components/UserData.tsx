@@ -1,4 +1,4 @@
-import { Box, IconButton, Paper, Typography, Tooltip, Snackbar, Slide, Collapse } from "@mui/material"
+import { Box, IconButton, Typography, Tooltip, Snackbar, Collapse } from "@mui/material"
 import React, {useState, useRef} from "react"
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
