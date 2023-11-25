@@ -11,7 +11,7 @@ User can navigate to work experience page
 
 User can navigate to bio page
     When User navigates to bio page
-    Wait Until Element Is Visible    xpath://*[contains(text(), 'Hello:D')]
+    Wait Until Element Is Visible    xpath://*[contains(text(), 'Who am I?')]
 
 User can navigate to projects page
     When User navigates to projects page

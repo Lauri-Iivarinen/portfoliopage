@@ -72,8 +72,8 @@ export const UserData = () => {
         <Box>
             <Box sx={{ borderWidth: 1, borderColor: 'rgb(0,0,0)', borderStyle: 'solid', padding: 2, width: 320, height: 290 }}>
                 <Box ref={containerRef} sx={{height: 230}}>
-                    {value === 0 && dataJson()}
-                    {value === 1 && dataClassic()}
+                    {value === 1 && dataJson()}
+                    {value === 0 && dataClassic()}
                 </Box>
                 <BottomNavigation
                     sx={{alignItems: 'flex-end'}}
@@ -84,8 +84,8 @@ export const UserData = () => {
                         toggleSlide()
                     }}
                 >
-                    <BottomNavigationAction label="JSON" icon={<JavascriptIcon />} />
                     <BottomNavigationAction label="CLASSIC" icon={<AbcIcon/>} />
+                    <BottomNavigationAction label="JSON" icon={<JavascriptIcon />} />
                 </BottomNavigation>
             </Box>
             <Snackbar
