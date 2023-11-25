@@ -3,7 +3,7 @@
         "project": "Groupcalendar",
         "school": true,
         "group": false,
-        "description": "description here",
+        "description": "calendar for group events:D",
         "technologies": ["Java", "Spring Boot", "SQL", "Relational databases"],
         "link": "https://github.com/Lauri-Iivarinen/groupcalendar"
     },
