@@ -3,7 +3,7 @@
         "project": "Groupcalendar",
         "school": true,
         "group": false,
-        "description": "calendar for group events:D",
+        "description": "Calendar for group events where user can create, join (and leave) groups, groups then can organize their own events visible for members only and members can then sign up for the created events.",
         "technologies": ["Java", "Spring Boot", "SQL", "Relational databases"],
         "link": "https://github.com/Lauri-Iivarinen/groupcalendar"
     },
@@ -11,7 +11,7 @@
         "project": "Movie Recommendations",
         "school": true,
         "group": false,
-        "description": "description here",
+        "description": "Simple application to use as a movie history list and to search and get recommendations based on movie history. App uses The Movie Database API for all data.",
         "technologies": ["JavaScript", "React", "Express", "Relational databases", "SQL", "Component Libraries"],
         "link": "https://github.com/Lauri-Iivarinen/REACT-MovieRecommendations"
     },
@@ -19,15 +19,15 @@
         "project": "Warspear Offline",
         "school": true,
         "group": false,
-        "description": "description here",
-        "technologies": ["Python", "Pygame"],
+        "description": "A fun school project that was created with Pygame library to make an RPG game where player can complete quests, slay mobs level up and learn new skills. Game is ran with vector graphics and goal was to learn more about Python and Python oop.",
+        "technologies": ["Python", "Pygame", "AI art generation"],
         "link": "https://github.com/Lauri-Iivarinen/Pygame-WarspearOffline"
     },
     {
         "project": "Ground Source Heat Pump",
         "school": true,
         "group": false,
-        "description": "description here",
+        "description": "Mobile application for editing configurations in ground-source heat pump using IOT device made by Husdata connected to same network with the mobile phone. Allows users to fine tune heating of their house to save electricity and that way costs of heating during cold winters especially in Finland.",
         "technologies": ["TypeScript", "React Native", "Component Libraries"],
         "link": "https://github.com/Lauri-Iivarinen/ReactNative-maalampopumppu"
     },
@@ -35,7 +35,7 @@
         "project": "Spotmap",
         "school": false,
         "group": false,
-        "description": "description here",
+        "description": "Spotmap app made with React Native, gives all parkour athletes the needed tools to save, share and find the best training spots near the user. App uses location data from your own phone to act as a navigator for nearby spots. You can comment and like the spots you have enjoyed (or hated:3).",
         "technologies": ["Java", "Spring Boot", "React Native", "TypeScript", "Component Libraries", "SQL", "Relational databases"],
         "link": "https://github.com/Lauri-Iivarinen/spotmap"
     },
@@ -43,7 +43,7 @@
         "project": "Discord Bot",
         "school": false,
         "group": false,
-        "description": "description here",
+        "description": "Was talking with friends about a discord server and potential bots used on the server made me want to try and create one. Using DiscordJS library I made a simple bot that has few functions inspired by the same friends that sprung the conversation to begin with.",
         "technologies": ["JavaScript"],
         "link": "https://github.com/Lauri-Iivarinen/DiscordBot1"
     },
@@ -51,7 +51,7 @@
         "project": "Advent of Code",
         "school": false,
         "group": false,
-        "description": "description here",
+        "description": "Favorite among developers. An advent calendar which offers a new problem every day that can be solved trough a simple or not so simple script. Every day has a new theme with its problem such as sorting algorithms or recursion issues. Unfortunately stopped early 2022, excited to start again in 2023",
         "technologies": ["Python"],
         "link": "https://github.com/Lauri-Iivarinen/adventOfCode"
     },
@@ -59,7 +59,7 @@
         "project": "Efilibrary",
         "school": true,
         "group": true,
-        "description": "description here",
+        "description": "EfiLibrary is a project between the students of Business Information Technology Degree Programme in Haaga-Helia University of Applied Sciences, and Eficode Oy, a Finnish company specializing in enhancing software development, whose products are related to automation and devops consulting, as well as accessibility and user studies. Joined for tne fall 2023 team to continue development made in the last year of the project.",
         "technologies": ["TypeScript", "Express", "React", "SQL", "Relational databases", "Docker", "Robot Framework", "GitHub actions"],
         "link": "https://github.com/LibraryProjectGroup"
     },
@@ -67,8 +67,8 @@
         "project": "Mobile Chess Game",
         "school": true,
         "group": true,
-        "description": "description here",
+        "description": "This is a schoolproject made by five students. The application is built with React Native, using TypeScript. As a backend we used socket.io and node (express), to get realtime game and chat updates. The goal was to create a multiplayer online chess game, where players can play against friends and random opponents. We also wanted to include a chat for an enchanced player experience.",
         "technologies": ["TypeScript", "React Native", "Express", "Socket.io"],
-        "link": "https://github.com/OP2-CheckMate"
+        "link": "https://github.com/OP2-CheckMate/OnlineChessFront"
     }
 ]

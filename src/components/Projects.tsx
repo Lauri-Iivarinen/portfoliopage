@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Tabs, Tab, Link, Card, CardActions, CardContent, CardMedia, TextField, Select, MenuItem, Switch } from "@mui/material";
+import { Box, Typography, Paper, Tabs, Tab, Link, Card, CardActions, CardContent, CardMedia, TextField, Select, MenuItem, Switch, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -16,6 +16,7 @@ export const Projects = () => {
     const [keyword, setKeyword] = useState('')
     const [filter, setFilter] = useState('Name')
     const [typeFilter, setTypeFilter] = useState('all')
+    const [groupFilter, setGroupFilter] = useState('all')
 
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -28,6 +29,7 @@ export const Projects = () => {
     }, [])
 
     useEffect(() => filterData(''), [filter])
+    useEffect(() => filterData(''), [stableData])
 
 
     const handleFilterChange = (event: any) => {
@@ -39,10 +41,23 @@ export const Projects = () => {
         filterData(keyword, event.target.value)
     };
 
-    const filterData = (key: string, type=typeFilter) => {
+    const handleGroupFilterChange = (event: any) => {
+        setGroupFilter(event.target.value);
+        filterData(keyword, typeFilter, event.target.value)
+    };
+
+    const resetFilter = () => {
+        setFilter('Name')
+        setKeyword('')
+        setTypeFilter('all')
+        setGroupFilter('all')
+        filterData('', 'all', 'all', 'Name')
+    }
+
+    const filterData = (key: string, type=typeFilter, group=groupFilter, textFilter=filter) => {
         setKeyword(key)
         let filteredData: Project[] = []
-        switch (filter) {
+        switch (textFilter) {
             case 'Name':
                 filteredData = stableData.filter(item => item.project.toLowerCase().includes(key.toLowerCase()))
                 break;
@@ -62,6 +77,17 @@ export const Projects = () => {
                 break
             case 'personal':
                 filteredData = filteredData.filter(item => item.school === false)
+                break
+            default:
+                break
+        }
+
+        switch (group) {
+            case 'group':
+                filteredData = filteredData.filter(item => item.group === true)
+                break
+            case 'solo':
+                filteredData = filteredData.filter(item => item.group === false)
                 break
             default:
                 break
@@ -95,22 +121,21 @@ export const Projects = () => {
                 <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
                 
                 <TextField value={keyword} onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel>Search by</InputLabel>
+                    <Select
+                        value={filter}
+                        label="Search"
+                        onChange={handleFilterChange}
+                    >
+                        <MenuItem value='Name'>Name</MenuItem>
+                        <MenuItem value='Description'>Description</MenuItem>
+                        <MenuItem value='Technology'>Technology</MenuItem>
+                    </Select>
+                </FormControl>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 120, marginLeft: 5 }}>
+                <InputLabel>Project type</InputLabel>
                 <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={filter}
-                    label="Search"
-                    onChange={handleFilterChange}
-                >
-                    <MenuItem value='Name'>Name</MenuItem>
-                    <MenuItem value='Description'>Description</MenuItem>
-                    <MenuItem value='Technology'>Technology</MenuItem>
-                </Select>
-
-                <Select
-                    sx={{marginLeft: 5}}
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
                     value={typeFilter}
                     label="Project type"
                     onChange={handleTypeFilterChange}
@@ -119,28 +144,39 @@ export const Projects = () => {
                     <MenuItem value='personal'>Personal</MenuItem>
                     <MenuItem value='school'>School</MenuItem>
                 </Select>
-
-                {/*<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    {data.map(project => <Tab label={project.project}></Tab>)}
-                </Tabs>
-                {data.map((project, index) => renderProject(project, index))}
-                */}
+                </FormControl>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel>Group type</InputLabel>
+                <Select
+                    value={groupFilter}
+                    label="Group"
+                    onChange={handleGroupFilterChange}
+                >
+                    <MenuItem value='all'>All</MenuItem>
+                    <MenuItem value='group'>Group</MenuItem>
+                    <MenuItem value='solo'>Solo</MenuItem>
+                </Select>
+                </FormControl>
+                <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
+                    <Button onClick={resetFilter}>Reset filters</Button>
+                </FormControl>
                 <Grid container spacing={2} columnSpacing={2}>
                 {data.map((project, index) =>
-                    <Card key={index} sx={{margin: 1, width: 500, height: 600}}>
+                    <Card key={index} sx={{margin: 1, width: 500, height: 650}}>
                         <CardContent>
                             <Typography variant='h5'>{project.project}</Typography>
                             <Typography>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
                             <Typography>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                            <CardActions sx={{justifyContent: 'center', alignItems: 'end'}}>
+                                <Link href={project.link}>GitHub</Link>
+                            </CardActions>
                             <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
                             <Box sx={{marginTop: 3, marginBottom: 3}}>
                                 <Typography>Technologies used:</Typography>
                                 {project.technologies.map(item => <Typography sx={{marginLeft: 2}}> - {item}</Typography>)}
                             </Box>
                         </CardContent>
-                        <CardActions>
-                            <Link href={project.link}>GitHub</Link>
-                        </CardActions>
+                        
                     </Card>
                 )}
                 </Grid>
