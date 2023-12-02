@@ -96,13 +96,14 @@ export const Projects = () => {
             <Paper sx={{margin: 2, padding: 2}}>
                 <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
                 
-                <TextField value={keyword} onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
+                <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
                     <Select
                         value={filter}
                         label="Search"
                         onChange={handleFilterChange}
+                        name="SearchBy"
                     >
                         <MenuItem value='Name'>Name</MenuItem>
                         <MenuItem value='Description'>Description</MenuItem>
@@ -115,6 +116,7 @@ export const Projects = () => {
                     value={typeFilter}
                     label="Project type"
                     onChange={handleTypeFilterChange}
+                    name="FilterByType"
                 >
                     <MenuItem value='all'>All</MenuItem>
                     <MenuItem value='personal'>Personal</MenuItem>
@@ -127,6 +129,7 @@ export const Projects = () => {
                     value={groupFilter}
                     label="Group"
                     onChange={handleGroupFilterChange}
+                    name="FilterByGroup"
                 >
                     <MenuItem value='all'>All</MenuItem>
                     <MenuItem value='group'>Group</MenuItem>

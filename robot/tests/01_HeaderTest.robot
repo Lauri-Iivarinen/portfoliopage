@@ -7,7 +7,7 @@ Suite Teardown    Close all browsers
 User can navigate to work experience page
     Given User has home page open in browser
     When User navigates to work page
-    Wait Until Element Is Visible    xpath://*[contains(text(), 'Work experience')]
+    Wait Until Element Is Visible    xpath://*[contains(text(), 'Gymnastics instructor')]
 
 User can navigate to bio page
     When User navigates to bio page
@@ -20,11 +20,11 @@ User can navigate to projects page
 
 *** Keywords ***
 User navigates to work page
-    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/a[2]
+    Click Element   xpath://*[@href="/career"]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
 
 User navigates to bio page
-    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/a[1]
+    Click Element   xpath://*[@href='/']
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
 
 
