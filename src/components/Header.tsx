@@ -10,7 +10,7 @@ export const Header = () => {
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'center' }}>
             <Link href='/' sx={{marginRight: 15}} color='rgb(255,255,255)'>Bio</Link>
-            <Link href='/work' sx={{marginRight: 15}} color='rgb(255,255,255)'>Work</Link>
+            <Link href='/career' sx={{marginRight: 15}} color='rgb(255,255,255)'>Career</Link>
             <Link href='/projects' color='rgb(255,255,255)'>Projects</Link>
         </Toolbar>
       </AppBar>

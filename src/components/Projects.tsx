@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Tabs, Tab, Link, Card, CardActions, CardContent, CardMedia, TextField, Select, MenuItem, Switch, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, Paper, Link, Card, CardActions, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -10,7 +10,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 
 export const Projects = () => {
 
-    const [value, setValue] = useState(0);
     const [data, setData] = useState<Project[]>([])
     const [stableData, setStableData] = useState<Project[]>([])
     const [keyword, setKeyword] = useState('')
@@ -18,19 +17,10 @@ export const Projects = () => {
     const [typeFilter, setTypeFilter] = useState('all')
     const [groupFilter, setGroupFilter] = useState('all')
 
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
-
     useEffect(() => {
         setStableData(projectData)
         setData(projectData)
     }, [])
-
-    useEffect(() => filterData(''), [filter])
-    useEffect(() => filterData(''), [stableData])
-
 
     const handleFilterChange = (event: any) => {
         setFilter(event.target.value);
@@ -67,6 +57,7 @@ export const Projects = () => {
             case 'Technology':
                 const list = stableData.filter(item => {
                     if (item.technologies.find(technology => technology.toLowerCase().includes(key.toLowerCase()))) return true
+                    return false
                 })
                 filteredData = list
                 break
@@ -97,23 +88,8 @@ export const Projects = () => {
     }
 
 
-    const renderProject = (project: Project, index: number) =>
-        <Box sx={{ margin: 5 }}>
-            {value === index &&
-                <Box>
-                    <Typography variant='h3'>{project.project}</Typography>
-                    <Typography>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                    <Typography>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                    <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
-                    <Box sx={{marginTop: 3, marginBottom: 3}}>
-                        <Typography>Technologies used:</Typography>
-                        {project.technologies.map((item, index) => <Typography key={index} sx={{marginLeft: 2}}> - {item}</Typography>)}
-                    </Box>
-                    <Link href={project.link}>GitHub</Link>
-                </Box>
-            }
-        </Box>
-    
+    useEffect(() => {filterData('')}, [filter, stableData])
+
     return (
         <Box>
             <Header></Header>
@@ -184,3 +160,26 @@ export const Projects = () => {
         </Box>
     )
 }
+
+
+/*
+    Unused snippet that may come in handy later
+
+ const renderProject = (project: Project, index: number) =>
+        <Box sx={{ margin: 5 }}>
+            {value === index &&
+                <Box>
+                    <Typography variant='h3'>{project.project}</Typography>
+                    <Typography>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                    <Typography>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                    <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
+                    <Box sx={{marginTop: 3, marginBottom: 3}}>
+                        <Typography>Technologies used:</Typography>
+                        {project.technologies.map((item, index) => <Typography key={index} sx={{marginLeft: 2}}> - {item}</Typography>)}
+                    </Box>
+                    <Link href={project.link}>GitHub</Link>
+                </Box>
+            }
+        </Box>
+    
+*/
