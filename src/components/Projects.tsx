@@ -148,8 +148,8 @@ export const Projects = () => {
                     <Card key={index} sx={{margin: 1, width: 500, height: 650}}>
                         <CardContent>
                             <Typography variant='h5'>{project.project}</Typography>
-                            <Typography>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                            <Typography>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                            <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                            <Typography sx={{alignItems: 'center', display: 'flex'}}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
                             <CardActions sx={{justifyContent: 'center', alignItems: 'end'}}>
                                 <Link href={project.link}>GitHub</Link>
                             </CardActions>
