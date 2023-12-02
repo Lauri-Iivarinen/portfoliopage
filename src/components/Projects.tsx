@@ -6,6 +6,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import projectData from '../util/projectData.json'
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
+import { GitHubStats } from "./GitHubStats";
 
 
 export const Projects = () => {
@@ -88,14 +89,17 @@ export const Projects = () => {
     }
 
 
-    useEffect(() => {filterData('')}, [filter, stableData])
+    useEffect(() => { filterData('') }, [filter, stableData])
+    
+    const link = "https://github-readme-stats.vercel.app/api?username=Lauri-Iivarinen&show_icons=true&theme=dark"
+    const link2 = 'https://github-readme-stats.vercel.app/api?username=Lauri-Iivarinen&show_icons=true'
+    const link3 = "https://github-readme-stats.vercel.app/api?username=Lauri-iivarinen&show_icons=true"
 
     return (
         <Box>
             <Header></Header>
             <Paper sx={{margin: 2, padding: 2}}>
                 <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
-                
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
