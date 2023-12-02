@@ -54,13 +54,13 @@ export const WorkExperience = () => {
             <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
             <Typography variant='h5' className="vertical-timeline-element-title">{work.location}</Typography>
             <Typography>{work.smallDescription}</Typography>
-            <Button onClick={() => handleOpen(work)}>More details</Button>
+            <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
         </VerticalTimelineElement>
 
     return (
         <Box>
             <Header></Header>
-            <Paper sx={{padding: 4, backgroundColor: 'rgb(200,200,200)'}}>
+            <Paper sx={{padding: 4, backgroundColor: 'rgb(20,20,20)'}}>
                 <VerticalTimeline>
                     {data?.map(row => {
                         return timelineElement(row)
