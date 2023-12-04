@@ -96,7 +96,7 @@ export const Projects = () => {
     const link3 = "https://github-readme-stats.vercel.app/api?username=Lauri-iivarinen&show_icons=true"
 
     return (
-        <Box>
+        <Paper>
             <Header></Header>
             <Paper sx={{margin: 2, padding: 2}}>
                 <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
@@ -164,7 +164,7 @@ export const Projects = () => {
                 )}
                 </Grid>
             </Paper>
-        </Box>
+        </Paper>
     )
 }
 

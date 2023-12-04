@@ -45,22 +45,22 @@ export const WorkExperience = () => {
     const timelineElement = (work: Work) =>
         <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+            contentStyle={{ background: 'inherit', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
+            contentArrowStyle={{ borderRight: '7px solid  #fff' }}
             date={work.date}
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: 'black' }}
+            iconStyle={{ background: '#9442c1', color: 'black' }}
             icon={iconPicker(work.icon)}
         >
             <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
             <Typography variant='h5' className="vertical-timeline-element-title">{work.location}</Typography>
             <Typography>{work.smallDescription}</Typography>
-            <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
+            <Button variant='outlined' color='primary' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
         </VerticalTimelineElement>
 
     return (
         <Box>
             <Header></Header>
-            <Paper sx={{padding: 4, backgroundColor: 'rgb(20,20,20)'}}>
+            <Paper sx={{padding: 4}}>
                 <VerticalTimeline>
                     {data?.map(row => {
                         return timelineElement(row)

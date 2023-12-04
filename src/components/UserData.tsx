@@ -59,24 +59,24 @@ export const UserData = () => {
             <Collapse in={slide}>
             <Box>
                 <Typography>Name: {copyText(data.name)}</Typography>
-                <Typography sx={{backgroundColor: 'rgb(220,220,220)', paddingLeft: 1}}>{data.name}</Typography>
+                <Typography sx={{ paddingLeft: 1}}>{data.name}</Typography>
                 <Typography>Email: {copyText(data.contact.email)}</Typography>
-                <Typography sx={{backgroundColor: 'rgb(220,220,220)', paddingLeft: 1}}>{data.contact.email}</Typography>
+                <Typography sx={{ paddingLeft: 1}}>{data.contact.email}</Typography>
                 <Typography>Telephone: {copyText(data.contact.telephone)} </Typography>
-                <Typography sx={{backgroundColor: 'rgb(220,220,220)', paddingLeft: 1}}>{ data.contact.telephone }</Typography>
+                <Typography sx={{ paddingLeft: 1}}>{ data.contact.telephone }</Typography>
             </Box>
             </Collapse>
         </Box>
 
     return (
         <Box>
-            <Box sx={{ borderWidth: 1, borderColor: 'rgb(0,0,0)', borderStyle: 'solid', padding: 2, width: 320, height: 290 }}>
+            <Box sx={{ borderWidth: 1, borderStyle: 'solid', padding: 2, width: 320, height: 290 }}>
                 <Box ref={containerRef} sx={{height: 230}}>
                     {value === 1 && dataJson()}
                     {value === 0 && dataClassic()}
                 </Box>
                 <BottomNavigation
-                    sx={{alignItems: 'flex-end'}}
+                    sx={{alignItems: 'flex-end', backgroundColor: 'inherit'}}
                     showLabels
                     value={value}
                     onChange={(event, newValue) => {
@@ -84,8 +84,8 @@ export const UserData = () => {
                         toggleSlide()
                     }}
                 >
-                    <BottomNavigationAction label="CLASSIC" icon={<AbcIcon/>} />
-                    <BottomNavigationAction label="JSON" icon={<JavascriptIcon />} />
+                    <BottomNavigationAction sx={{borderWidth: 1, borderColor: 'secondary', borderStyle: 'solid', paddingTop: 1, paddingBottom: 1, marginRight: 1}} label="CLASSIC" icon={<AbcIcon/>} />
+                    <BottomNavigationAction sx={{borderWidth: 1, borderColor: 'secondary', borderStyle: 'solid', paddingTop: 1, paddingBottom: 1, marginLeft: 1}} label="JSON" icon={<JavascriptIcon />} />
                 </BottomNavigation>
             </Box>
             <Snackbar

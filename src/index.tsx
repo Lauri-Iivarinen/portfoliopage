@@ -10,6 +10,9 @@ import {
 import { Homepage } from './components/Homepage';
 import { WorkExperience } from './components/WorkExperience';
 import { Projects } from './components/Projects';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { DateRangeSharp } from '@mui/icons-material';
+import { ThemeOptions } from '@mui/material/styles';
 
 const router = createBrowserRouter([
   {
@@ -26,12 +29,28 @@ const router = createBrowserRouter([
   },
 ]);
 
+const themeOptions: ThemeOptions = {
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#26f500',
+    },
+    secondary: {
+      main: '#9442c1',
+    },
+  },
+};
+
+const theme = createTheme(themeOptions)
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

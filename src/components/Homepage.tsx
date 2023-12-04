@@ -9,9 +9,9 @@ import { GitHubStats } from "./GitHubStats"
 export const Homepage = () => {
     
     return (
-        <Box>
+        <Paper sx={{paddingBottom: 10}}>
             <Header></Header>
-            <Paper sx={{ margin: 6, marginTop: 4, padding: 6 }}>
+            <Box sx={{ margin: 6, marginTop: 4, padding: 6}}>
                 <Grid container={true} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     <Grid xs={3}>
                         <Box>
@@ -37,7 +37,7 @@ export const Homepage = () => {
                 <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',}}>
                     <GitHubStats></GitHubStats>
                 </Box>
-            </Paper>
-        </Box>
+            </Box>
+        </Paper>
     )
 }
