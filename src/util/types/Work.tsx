@@ -5,4 +5,5 @@ export interface Work{
     description: string
     location: string
     icon: string
+    img: string[]
 }

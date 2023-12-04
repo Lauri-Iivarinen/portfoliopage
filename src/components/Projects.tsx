@@ -90,10 +90,6 @@ export const Projects = () => {
 
 
     useEffect(() => { filterData('') }, [filter, stableData])
-    
-    const link = "https://github-readme-stats.vercel.app/api?username=Lauri-Iivarinen&show_icons=true&theme=dark"
-    const link2 = 'https://github-readme-stats.vercel.app/api?username=Lauri-Iivarinen&show_icons=true'
-    const link3 = "https://github-readme-stats.vercel.app/api?username=Lauri-iivarinen&show_icons=true"
 
     return (
         <Paper>
@@ -145,7 +141,7 @@ export const Projects = () => {
                 </FormControl>
                 <Grid container spacing={2} columnSpacing={2}>
                 {data.map((project, index) =>
-                    <Card key={index} sx={{margin: 1, width: 500, height: 650}}>
+                    <Card elevation={3} key={index} sx={{margin: 1, width: 500, height: 650}}>
                         <CardContent>
                             <Typography variant='h5'>{project.project}</Typography>
                             <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
@@ -156,7 +152,7 @@ export const Projects = () => {
                             <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
                             <Box sx={{marginTop: 3, marginBottom: 3}}>
                                 <Typography>Technologies used:</Typography>
-                                {project.technologies.map(item => <Typography sx={{marginLeft: 2}}> - {item}</Typography>)}
+                                {project.technologies.map((item, key) => <Typography key={key} sx={{marginLeft: 2}}> - {item}</Typography>)}
                             </Box>
                         </CardContent>
                         

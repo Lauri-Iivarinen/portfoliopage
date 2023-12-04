@@ -10,6 +10,8 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import workData from '../util/workData.json'
 import { Work } from "../util/types/Work";
 import { useEffect } from "react";
+import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import { RenderImage } from "./RenderImage";
 
 export const WorkExperience = () => {
     const [data, setData] = useState<Work[]>()
@@ -72,6 +74,12 @@ export const WorkExperience = () => {
                         <Typography>
                             {activeWork?.description}
                         </Typography>
+                        <Grid container={true} spacing={2} sx={{mt: 3}}>
+                            {activeWork?.img.map(i => 
+                                <Grid xs={6}>
+                                    <RenderImage imgName={i}></RenderImage>
+                                </Grid>)}
+                        </Grid>
                     </Box>
                 </Dialog>
             </Paper>

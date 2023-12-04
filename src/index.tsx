@@ -39,6 +39,9 @@ const themeOptions: ThemeOptions = {
       main: '#9442c1',
     },
   },
+  typography: {
+    fontFamily: "'Play', sans-serif",
+    },
 };
 
 const theme = createTheme(themeOptions)
