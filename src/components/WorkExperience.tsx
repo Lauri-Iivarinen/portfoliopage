@@ -74,7 +74,7 @@ export const WorkExperience = () => {
                         <Typography>
                             {activeWork?.description}
                         </Typography>
-                        <Grid container={true} spacing={2} sx={{mt: 3}}>
+                        <Grid container={true} spacing={1} sx={{mt: 3}}>
                             {activeWork?.img.map(i => 
                                 <Grid xs={6}>
                                     <RenderImage imgName={i}></RenderImage>

@@ -4,5 +4,6 @@ export interface Project{
     group: boolean,
     description: string,
     technologies: string[],
-    link: string
+    link: string,
+    img: string[]
 }

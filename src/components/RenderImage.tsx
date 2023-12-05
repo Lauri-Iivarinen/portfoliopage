@@ -14,6 +14,6 @@ export const RenderImage : React.FC<Props> = ({imgName}) => {
         return <Box></Box>
     }
     return(
-        <Box>{!loading ? <img width='200px' src={img} />: <CircularProgress />}</Box>
+        <Box>{!loading ? <img width='250px' src={img} />: <CircularProgress />}</Box>
     )
 }

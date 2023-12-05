@@ -2,7 +2,7 @@ import { Box, Paper, Typography } from "@mui/material"
 import React from "react"
 import { Header } from "./Header"
 import { UserData } from "./UserData"
-import image from '../util/img/me1.png'
+import image from '../util/img/me1.jpg'
 import Grid from '@mui/material/Unstable_Grid2';
 import { GitHubStats } from "./GitHubStats"
 

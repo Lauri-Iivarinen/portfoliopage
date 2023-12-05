@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Link, Card, CardActions, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, Paper, Link, Card, CardActions, CardContent,CardMedia, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -7,6 +7,7 @@ import projectData from '../util/projectData.json'
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
 import { GitHubStats } from "./GitHubStats";
+import { RenderProjectMedia } from "./RenderProjectMedia";
 
 
 export const Projects = () => {
@@ -141,7 +142,8 @@ export const Projects = () => {
                 </FormControl>
                 <Grid container spacing={2} columnSpacing={2}>
                 {data.map((project, index) =>
-                    <Card elevation={3} key={index} sx={{margin: 1, width: 500, height: 650}}>
+                    <Card elevation={3} key={index} sx={{ margin: 1, width: 500, height: 700, borderWidth: 1, borderColor: 'rgb(100,100,100)', borderStyle: 'solid' }}>
+                        <RenderProjectMedia img={project.img}></RenderProjectMedia>
                         <CardContent>
                             <Typography variant='h5'>{project.project}</Typography>
                             <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
@@ -149,12 +151,13 @@ export const Projects = () => {
                             <CardActions sx={{justifyContent: 'center', alignItems: 'end'}}>
                                 <Link href={project.link}>GitHub</Link>
                             </CardActions>
-                            <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
-                            <Box sx={{marginTop: 3, marginBottom: 3}}>
+                            <Typography sx={{ marginTop: 1 }}>{project.description}</Typography>
+                            <Box sx={{marginTop: 1, marginBottom: 3}}>
                                 <Typography>Technologies used:</Typography>
                                 {project.technologies.map((item, key) => <Typography key={key} sx={{marginLeft: 2}}> - {item}</Typography>)}
                             </Box>
                         </CardContent>
+                        
                         
                     </Card>
                 )}
