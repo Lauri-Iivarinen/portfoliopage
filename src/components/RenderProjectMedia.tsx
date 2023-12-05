@@ -15,7 +15,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const maxSteps = img.length;
     useEffect(() => {
         setImages(img)
-    }, [])
+    }, [img])
 
     const next = () => {
         setStep((prevStep => prevStep + 1))

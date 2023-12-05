@@ -10,6 +10,12 @@ import { GitHubStats } from "./GitHubStats";
 import { RenderProjectMedia } from "./RenderProjectMedia";
 
 
+/*
+
+FILTERING FUCKS UP IMAGE DISPLAYS
+
+*/
+
 export const Projects = () => {
 
     const [data, setData] = useState<Project[]>([])
@@ -97,6 +103,7 @@ export const Projects = () => {
             <Header></Header>
             <Paper sx={{margin: 2, padding: 2}}>
                 <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
+                <Box sx={{position: 'sticky'}}>
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
@@ -139,22 +146,29 @@ export const Projects = () => {
                 </FormControl>
                 <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
                     <Button onClick={resetFilter}>Reset filters</Button>
-                </FormControl>
+                    </FormControl>
+                </Box>
                 <Grid container spacing={2} columnSpacing={2}>
                 {data.map((project, index) =>
                     <Card elevation={3} key={index} sx={{ margin: 1, width: 500, height: 700, borderWidth: 1, borderColor: 'rgb(100,100,100)', borderStyle: 'solid' }}>
                         <RenderProjectMedia img={project.img}></RenderProjectMedia>
                         <CardContent>
                             <Typography variant='h5'>{project.project}</Typography>
+                            <Typography
+                                sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#26f500'}}
+                                component="a"
+                                href={project.link}
+                            >
+                                GitHub
+                            </Typography>
                             <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                            <Typography sx={{alignItems: 'center', display: 'flex'}}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                            <CardActions sx={{justifyContent: 'center', alignItems: 'end'}}>
-                                <Link href={project.link}>GitHub</Link>
-                            </CardActions>
-                            <Typography sx={{ marginTop: 1 }}>{project.description}</Typography>
-                            <Box sx={{marginTop: 1, marginBottom: 3}}>
-                                <Typography>Technologies used:</Typography>
-                                {project.technologies.map((item, key) => <Typography key={key} sx={{marginLeft: 2}}> - {item}</Typography>)}
+                            <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                            <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
+                            <Box sx={{marginTop: 2, marginBottom: 3}}>
+                                <Typography sx={{color: '#26f500'}}>Technologies used:</Typography>
+                                <Grid container={true} spacing={2}>
+                                {project.technologies.map((item, key) => <Grid xs={3}><Typography key={key}>{item}</Typography></Grid>)}
+                                </Grid>
                             </Box>
                         </CardContent>
                         

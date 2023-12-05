@@ -30,7 +30,7 @@ export const UserData = () => {
                 navigator.clipboard.writeText(text)
                 toggleSnackbar()
             }}>
-                <ContentCopyIcon></ContentCopyIcon>
+                <ContentCopyIcon color='primary'></ContentCopyIcon>
             </IconButton>
         </Tooltip>
     

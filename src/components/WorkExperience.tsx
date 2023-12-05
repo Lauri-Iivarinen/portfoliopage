@@ -44,8 +44,9 @@ export const WorkExperience = () => {
         }
     }
     
-    const timelineElement = (work: Work) =>
+    const timelineElement = (work: Work, index: number) =>
         <VerticalTimelineElement
+            key={index}
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'inherit', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
@@ -64,8 +65,8 @@ export const WorkExperience = () => {
             <Header></Header>
             <Paper sx={{padding: 4}}>
                 <VerticalTimeline>
-                    {data?.map(row => {
-                        return timelineElement(row)
+                    {data?.map((row, index) => {
+                        return timelineElement(row, index)
                     })}
                 </VerticalTimeline>
                 <Dialog open={toggleModal} onClose={handleClose}>
@@ -75,8 +76,8 @@ export const WorkExperience = () => {
                             {activeWork?.description}
                         </Typography>
                         <Grid container={true} spacing={1} sx={{mt: 3}}>
-                            {activeWork?.img.map(i => 
-                                <Grid xs={6}>
+                            {activeWork?.img.map((i, index) => 
+                                <Grid key={index} xs={6}>
                                     <RenderImage imgName={i}></RenderImage>
                                 </Grid>)}
                         </Grid>

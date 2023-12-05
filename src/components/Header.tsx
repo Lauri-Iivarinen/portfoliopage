@@ -5,11 +5,23 @@ import Toolbar from '@mui/material/Toolbar';
 import { Link, Typography } from "@mui/material";
 
 export const Header = () => {
+
+  const mouseOver = (e: any) => {
+    e.target.style.color = '#26f500'
+    //purple: #9442c1
+    //green: #26f500
+  }
+
+  const mouseOff = (e: any) => {
+    e.target.style.color = 'inherit'
+  }
+
     return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'center' }}>
-            <Typography variant="h6"
+            <Typography
+              variant="h6"
               component="a"
               href="/"
               sx={{
@@ -18,7 +30,11 @@ export const Header = () => {
                 display: { xs: 'none', md: 'flex' },
                 fontWeight: 700,
                 color: 'inherit',
-                textDecoration: 'none',}}>
+                textDecoration: 'none',
+              }}
+              onMouseOver={mouseOver}
+              onMouseOut={mouseOff}
+            >
                 BIO
               </Typography>
               <Typography variant="h6"
@@ -30,7 +46,11 @@ export const Header = () => {
                 display: { xs: 'none', md: 'flex' },
                 fontWeight: 700,
                 color: 'inherit',
-                textDecoration: 'none',}}>
+                textDecoration: 'none',
+              }}
+              onMouseOver={mouseOver}
+              onMouseOut={mouseOff}
+            >
                 CAREER
               </Typography>
               <Typography variant="h6"
@@ -42,7 +62,11 @@ export const Header = () => {
                 display: { xs: 'none', md: 'flex' },
                 fontWeight: 700,
                 color: 'inherit',
-                textDecoration: 'none',}}>
+                textDecoration: 'none',
+              }}
+              onMouseOver={mouseOver}
+              onMouseOut={mouseOff}
+            >
                 PROJECTS
               </Typography>
             

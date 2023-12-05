@@ -15,7 +15,7 @@
         "description": "Simple application to use as a movie history list and to search and get recommendations based on movie history. App uses The Movie Database API for all data.",
         "technologies": ["JavaScript", "React", "Express", "Relational databases", "SQL", "Component Libraries"],
         "link": "https://github.com/Lauri-Iivarinen/REACT-MovieRecommendations",
-        "img": ["https://user-images.githubusercontent.com/94760484/236471875-e6c1413d-a691-4d31-9a5f-400e6af2f0b8.PNG", "https://user-images.githubusercontent.com/94760484/236470927-e0bf2f82-9917-48d3-8e89-ab1d45d39c59.PNG"]
+        "img": ["https://user-images.githubusercontent.com/94760484/236471875-e6c1413d-a691-4d31-9a5f-400e6af2f0b8.PNG", "https://user-images.githubusercontent.com/94760484/236470927-e0bf2f82-9917-48d3-8e89-ab1d45d39c59.PNG", "https://user-images.githubusercontent.com/94760484/236470845-65c29ac8-3c46-4970-a6cb-7369f2f24c7e.PNG"]
     },
     {
         "project": "Warspear Offline",
@@ -51,7 +51,7 @@
         "description": "Was talking with friends about a discord server and potential bots used on the server made me want to try and create one. Using DiscordJS library I made a simple bot that has few functions inspired by the same friends that sprung the conversation to begin with.",
         "technologies": ["JavaScript"],
         "link": "https://github.com/Lauri-Iivarinen/DiscordBot1",
-        "img": [""]
+        "img": ["https://github.com/Lauri-Iivarinen/DiscordBot1/assets/94760484/6eac7ac6-87ab-422c-9bb4-c629cf9e7a44"]
     },
     {
         "project": "Advent of Code",
@@ -60,7 +60,7 @@
         "description": "Favorite among developers. An advent calendar which offers a new problem every day that can be solved trough a simple or not so simple script. Every day has a new theme with its problem such as sorting algorithms or recursion issues. Unfortunately stopped early 2022, excited to start again in 2023",
         "technologies": ["Python"],
         "link": "https://github.com/Lauri-Iivarinen/adventOfCode",
-        "img": [""]
+        "img": ["https://github.com/Lauri-Iivarinen/adventOfCode/assets/94760484/66f458ae-9ed6-474f-9fe4-b013351b878d"]
     },
     {
         "project": "Efilibrary",
