@@ -16,15 +16,9 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v3
-    - name: Build and run frontend container
+    - name: Build and run containers
       run: |
-          docker-compose -f docker-compose-start.yaml up -d
-    - name: Run tests
-      run: |
-        docker run --shm-size=2g -e BROWSER=headlesschrome \
-        -v ${{ github.workspace }}/robot/tests:/opt/robotframework/tests:Z \
-        --user 3001:3001 \
-        ppodgorsek/robot-framework:latest
+          docker compose up
     - name: Clean up
       if: always()
       run: |
