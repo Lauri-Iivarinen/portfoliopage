@@ -1,0 +1,12 @@
+version: '3.3'
+
+
+services:
+  robot:
+    shm_size: 2gb
+    image: ppodgorsek/robot-framework:latest
+    volumes:
+      - ./robot/out:/opt/robotframework/reports:Z
+      - ./robot/tests:/opt/robotframework/tests:Z
+    ports:
+        - 3001:3001
