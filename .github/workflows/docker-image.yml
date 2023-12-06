@@ -1,20 +1,20 @@
 name: Run Robot Framework Tests
-  on:
+on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  jobs:
-    run_tests:
+jobs:
+  run_tests:
     runs-on: ubuntu-latest
     steps:
       # checkout code from a repository
       - uses: actions/checkout@v2
       # create folder for test reports
       - name: Create folder for reports
-      run: mkdir reports
+        run: mkdir reports
       - name: Build and run frontend container
-      run: |
+        run: |
           docker-compose -f docker-compose-start.yaml up -d
       # run Robot Framework tests inside Docker container
       - name: Run Robot Framework Tests
@@ -23,72 +23,35 @@ name: Run Robot Framework Tests
       # it is required that GitHub repository contains folder "reports". Commit some file inside "reports" to create it
       # place tests in folder tests or change docker run command accordingly
       # configure -e ROBOT_OPTIONS according to yout tests, or remove it if no special configuration is needed
-      run: |
-        docker run --shm-size=2g
-        -v ${PWD}/reports:/opt/robotframework/reports:Z \
-        -v ${{ github.workspace }}/:/opt/robotframework/tests:Z \
-        --user 
-        (id -g)
-        ppodgorsek/robot-framework:latest
+        run: |
+          docker run --shm-size=2g
+          -v ${PWD}/reports:/opt/robotframework/reports:Z \
+          -v ${{ github.workspace }}/:/opt/robotframework/tests:Z \
+          --user 
+          (id -g)
+          ppodgorsek/robot-framework:latest
       # upload test reports as a zip file
       - name: Upload reports
-          uses: actions/upload-artifact@v1
-          if: always()
-          with:
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
           name: reports
-          # set path to Robot Framework results reports. Exclude dummy file that is needed because of ppodgorsek image privileges.
+        # set path to Robot Framework results reports. Exclude dummy file that is needed because of ppodgorsek image privileges.
           path: ${{ github.workspace }}/reports
           # repository name is needed for posting test report in the next step
       - name: Get Repository Name
-      run: |
-        export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
-        echo "::set-env name=REPOSITORY_NAME::$REPO"
-        # when test are run for a commit, post results as a comment
-        # note: comment is not posted for tests triggered for pull requests, only for a main branch (master)
+        run: |
+          export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
+          echo "::set-env name=REPOSITORY_NAME::$REPO"
+          # when test are run for a commit, post results as a comment
+          # note: comment is not posted for tests triggered for pull requests, only for a main branch (master)
       - name: Send test report as comment to commit
-      uses: joonvena/robotframework-reporter-action@v0.1
-      if: ${{ github.event_name == 'push' }}
-      env:
-      GH_ACCESS_TOKEN: ${{ github.TOKEN }}
-      REPO_OWNER: ${{ github.REPOSITORY_OwNER }}
-      COMMIT_SHA: ${{ github.SHA }}
-      REPOSITORY: ${{ env.REPOSITORY_NAME }}
-      REPORT_PATH: ${{ github.workspace }}/reports
-
-
-
-  name: Docker Image CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-      packages: write
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build and run frontend container
-      run: |
-          docker-compose -f docker-compose-start.yaml up -d
-    - name: Create reports folder
-      run: mkdir reports
-    - name: Run tests
-      run: |
-        docker run --shm-size=2g -e BROWSER=headlesschrome \
-        -v ${{ github.workspace }}/robot/tests:/opt/robotframework/tests:Z \
-        -v ${PWD}/reports:/opt/robotframework/reports:Z \
-        --user 3001:3001 \
-        ppodgorsek/robot-framework:latest
-    - name: Clean up
-      if: always()
-      run: |
-        docker compose down
-
+        uses: joonvena/robotframework-reporter-action@v0.1
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GH_ACCESS_TOKEN: ${{ github.TOKEN }}
+          REPO_OWNER: ${{ github.REPOSITORY_OwNER }}
+          COMMIT_SHA: ${{ github.SHA }}
+          REPOSITORY: ${{ env.REPOSITORY_NAME }}
+          REPORT_PATH: ${{ github.workspace }}/reports
 
