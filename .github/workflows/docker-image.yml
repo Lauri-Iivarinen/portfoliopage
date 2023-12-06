@@ -20,10 +20,14 @@ jobs:
     - name: Build and run frontend container
       run: |
           docker-compose -f docker-compose-start.yaml up -d
-    - name: Build and run test container
-      run: |
-          mkdir ${{github.workspace}}/reports
-          docker-compose -f docker-compose-test.yaml up
+     - name: test
+          run: |
+            mkdir ${{github.workspace}}/reports
+            docker run --shm-size=2g -e BROWSER=headlesschrome \
+            -v ${{github.workspace}}/robot/tests:/opt/robotframework/tests:Z \
+            -v ${{github.workspace}}/robot/out:/opt/robotframework/reports:Z \
+            --user 3001:3001 \
+            ppodgorsek/robot-framework:latest
     - name: Clean up
       if: always()
       run: |
