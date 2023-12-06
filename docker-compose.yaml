@@ -9,8 +9,14 @@ services:
       - ./src:/app/src
     ports:
         - 3000:3000
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3000/" ]
+      interval: 15s
+      timeout: 10s
+      retries: 15
   
   robot:
+    shm_size: 2gb
     image: ppodgorsek/robot-framework:latest
     volumes:
       - ./robot/out:/opt/robotframework/reports:Z

@@ -15,3 +15,7 @@ User has home page open in browser
 User navigates to projects page
     Click Element   xpath://*[@id="root"]/div/div[1]/header/div/a[3]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
+
+User navigates to homepage
+    Click Element   xpath://*[@href='/']
+    Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]

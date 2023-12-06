@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    keywords.robot
-Suite Teardown    Close all browsers
 
 
 *** Test Cases ***
@@ -11,7 +10,7 @@ User can navigate to work experience page
 
 User can navigate to bio page
     When User navigates to bio page
-    Wait Until Element Is Visible    xpath://*[contains(text(), 'Who am I?')]
+    Wait Until Element Is Visible    xpath://*[contains(text(), "My name is Lauri and I'm an enthusiastic, up-and-coming software developer looking for an internship.")]
 
 User can navigate to projects page
     When User navigates to projects page
