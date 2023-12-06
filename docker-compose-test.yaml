@@ -6,7 +6,7 @@ services:
     shm_size: 2gb
     image: ppodgorsek/robot-framework:latest
     volumes:
-      - ${{github.workspace}}/robot/out:/opt/robotframework/reports:Z
+      - ${PWD}/robot/out:/opt/robotframework/reports:Z
       - ./robot/tests:/opt/robotframework/tests:Z
     ports:
         - 3001:3001
