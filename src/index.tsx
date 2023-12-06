@@ -11,7 +11,6 @@ import { Homepage } from './components/Homepage';
 import { WorkExperience } from './components/WorkExperience';
 import { Projects } from './components/Projects';
 import { createTheme, ThemeProvider } from '@mui/material';
-import { DateRangeSharp } from '@mui/icons-material';
 import { ThemeOptions } from '@mui/material/styles';
 
 const router = createBrowserRouter([

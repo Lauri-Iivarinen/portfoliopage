@@ -13,7 +13,7 @@
         "school": true,
         "group": false,
         "description": "Simple application to use as a movie history list and to search and get recommendations based on movie history. App uses The Movie Database API for all data.",
-        "technologies": ["JavaScript", "React", "Express", "Relational databases", "SQL", "Component Libraries"],
+        "technologies": ["JavaScript", "React", "Express", "Relational databases", "SQL", "Component Libraries", "REST API"],
         "link": "https://github.com/Lauri-Iivarinen/REACT-MovieRecommendations",
         "img": ["https://user-images.githubusercontent.com/94760484/236471875-e6c1413d-a691-4d31-9a5f-400e6af2f0b8.PNG", "https://user-images.githubusercontent.com/94760484/236470927-e0bf2f82-9917-48d3-8e89-ab1d45d39c59.PNG", "https://user-images.githubusercontent.com/94760484/236470845-65c29ac8-3c46-4970-a6cb-7369f2f24c7e.PNG"]
     },
@@ -31,7 +31,7 @@
         "school": true,
         "group": false,
         "description": "Mobile application for editing configurations in ground-source heat pump using IOT device made by Husdata connected to same network with the mobile phone. Allows users to fine tune heating of their house to save electricity and that way costs of heating during cold winters especially in Finland.",
-        "technologies": ["TypeScript", "React Native", "Component Libraries"],
+        "technologies": ["TypeScript", "React Native", "Component Libraries", "REST API"],
         "link": "https://github.com/Lauri-Iivarinen/ReactNative-maalampopumppu",
         "img": ["https://user-images.githubusercontent.com/94760484/236798064-03c7b5c4-8c66-47d4-8ba7-e96dc7637301.PNG","https://user-images.githubusercontent.com/94760484/236458779-59f2216b-02db-4e36-8a9f-2d4d00a0a991.PNG","https://user-images.githubusercontent.com/94760484/236458763-578dad37-fe7d-4001-8b4b-be1bb0f702d6.jpg","https://user-images.githubusercontent.com/94760484/236458786-03c545b8-7dfa-4d6c-8c2b-1ab7d4820981.PNG"]
     },
@@ -40,7 +40,7 @@
         "school": false,
         "group": false,
         "description": "Spotmap app made with React Native, gives all parkour athletes the needed tools to save, share and find the best training spots near the user. App uses location data from your own phone to act as a navigator for nearby spots. You can comment and like the spots you have enjoyed (or hated:3).",
-        "technologies": ["Java", "Spring Boot", "React Native", "TypeScript", "Component Libraries", "SQL", "Relational databases"],
+        "technologies": ["Java", "Spring Boot", "React Native", "TypeScript", "Component Libraries", "REST API", "SQL", "Relational databases"],
         "link": "https://github.com/Lauri-Iivarinen/spotmap",
         "img": ["https://github.com/Lauri-Iivarinen/spotmap/assets/94760484/d099cba8-74b7-4511-832d-3cb13d7a9057", "https://github.com/Lauri-Iivarinen/spotmap/assets/94760484/a2f7c23a-3526-460f-8110-fabe6075de28"]
     },
@@ -49,7 +49,7 @@
         "school": false,
         "group": false,
         "description": "Was talking with friends about a discord server and potential bots used on the server made me want to try and create one. Using DiscordJS library I made a simple bot that has few functions inspired by the same friends that sprung the conversation to begin with.",
-        "technologies": ["JavaScript"],
+        "technologies": ["JavaScript", "DiscordJs"],
         "link": "https://github.com/Lauri-Iivarinen/DiscordBot1",
         "img": ["https://github.com/Lauri-Iivarinen/DiscordBot1/assets/94760484/6eac7ac6-87ab-422c-9bb4-c629cf9e7a44"]
     },
@@ -58,7 +58,7 @@
         "school": false,
         "group": false,
         "description": "Favorite among developers. An advent calendar which offers a new problem every day that can be solved trough a simple or not so simple script. Every day has a new theme with its problem such as sorting algorithms or recursion issues. Unfortunately stopped early 2022, excited to start again in 2023",
-        "technologies": ["Python"],
+        "technologies": ["Python", "JavaScript"],
         "link": "https://github.com/Lauri-Iivarinen/adventOfCode",
         "img": ["https://github.com/Lauri-Iivarinen/adventOfCode/assets/94760484/66f458ae-9ed6-474f-9fe4-b013351b878d"]
     },
@@ -66,8 +66,8 @@
         "project": "Efilibrary",
         "school": true,
         "group": true,
-        "description": "EfiLibrary is a project between the students of Business Information Technology Degree Programme in Haaga-Helia University of Applied Sciences, and Eficode Oy, a Finnish company specializing in enhancing software development, whose products are related to automation and devops consulting, as well as accessibility and user studies. Joined for tne fall 2023 team to continue development made in the last year of the project.",
-        "technologies": ["TypeScript", "Express", "React", "SQL", "Relational databases", "Docker", "Robot Framework", "GitHub actions"],
+        "description": "EfiLibrary is a project between the students of Business Information Technology Degree Programme in Haaga-Helia University of Applied Sciences, and Eficode Oy, a Finnish company specializing in enhancing software development, whose products are related to automation and devops consulting. Joined for tne fall 2023 team to continue development made in the last year of the project.",
+        "technologies": ["TypeScript", "Express", "REST API", "React", "SQL", "Relational databases", "Docker", "Robot Framework", "GitHub actions"],
         "link": "https://github.com/LibraryProjectGroup",
         "img": ["https://raw.githubusercontent.com/LibraryProjectGroup/library-project-frontend/s23-documentation/screenshots/login.PNG", "https://raw.githubusercontent.com/LibraryProjectGroup/library-project-frontend/s23-documentation/screenshots/booklist.PNG"]
     },

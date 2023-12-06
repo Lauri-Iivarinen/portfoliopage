@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Link, Card, CardActions, CardContent,CardMedia, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, Paper, Card, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -6,15 +6,9 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import projectData from '../util/projectData.json'
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
-import { GitHubStats } from "./GitHubStats";
 import { RenderProjectMedia } from "./RenderProjectMedia";
+import { GetIcon } from "./GetIcon";
 
-
-/*
-
-FILTERING FUCKS UP IMAGE DISPLAYS
-
-*/
 
 export const Projects = () => {
 
@@ -28,6 +22,7 @@ export const Projects = () => {
     useEffect(() => {
         setStableData(projectData)
         setData(projectData)
+        // eslint-disable-next-line
     }, [])
 
     const handleFilterChange = (event: any) => {
@@ -96,13 +91,16 @@ export const Projects = () => {
     }
 
 
-    useEffect(() => { filterData('') }, [filter, stableData])
+    useEffect(() => {
+        filterData('')
+        // eslint-disable-next-line
+    }, [filter, stableData])
 
     return (
         <Paper>
             <Header></Header>
             <Paper sx={{margin: 2, padding: 2}}>
-                <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia</Typography>
+                <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia.</Typography>
                 <Box sx={{position: 'sticky'}}>
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -165,9 +163,10 @@ export const Projects = () => {
                             <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
                             <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
                             <Box sx={{marginTop: 2, marginBottom: 3}}>
-                                <Typography sx={{color: '#26f500'}}>Technologies used:</Typography>
+                                <Typography sx={{ color: '#26f500' }}>Technologies used:
+                                </Typography>
                                 <Grid container={true} spacing={2}>
-                                {project.technologies.map((item, key) => <Grid xs={3}><Typography key={key}>{item}</Typography></Grid>)}
+                                    {project.technologies.map((item, key) => <Grid key={key} xs={2}><GetIcon iconName={item}></GetIcon></Grid>)}
                                 </Grid>
                             </Box>
                         </CardContent>

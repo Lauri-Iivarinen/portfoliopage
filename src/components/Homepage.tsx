@@ -20,16 +20,10 @@ export const Homepage = () => {
                     </Grid>
                     <Grid xs={6}>
                         <Box>
-                            <Typography variant='h3'> Who am I?</Typography>
-                            <Typography>
-                                An enthusiastic student at the end of my studies, 
-                                excited to venture deeper into the world of IT. 
-                                With several years of experience in working with people of different ages and backgrounds
-                                I have amassed a wealth of experience across software frameworks,
-                                technologies, languages, and leadership. With multiple difficult and demanding tasks assigned
-                                to me in years I have proven my capability to make fast and efficient
-                                decisions and work in different environments.
-                                </Typography>
+                            <Typography variant='h3'> Hello</Typography>
+                            <Typography variant='h5'>
+                                My name is Lauri and I'm an enthusiastic, up-and-coming software developer looking for an internship.
+                            </Typography>
                         </Box>
                     </Grid>
                     <Grid xs={3}><UserData /></Grid>

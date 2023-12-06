@@ -21,7 +21,7 @@
         "date": "July 2017 - June 2018",
         "workTitle": "Military conscript",
         "smallDescription": "Served my mandatory military service in Kaartin Jääkärirykmentti.",
-        "description": "Served for 347 days, completed NCO course and completed my service as platoon 2nd in command",
+        "description": "Military service is mandatory in finland for all males 18 years of age and voluntary for females. Served for 347 days, longest possible duration. Took part in NCO course and completed the latter half of my service as platoon 2nd in command and got promoted to sergeant on my last week of service.",
         "icon": "MilitaryTechIcon",
         "location": "Helsinki, Finland",
         "img": ["army1.jpg"]
@@ -57,7 +57,7 @@
         "date": "Aug. 2021 - Present",
         "workTitle": "Student at Haaga-Helia",
         "smallDescription": "Started my Business IT studies.",
-        "description": "Goal is to finish Bachelors degree.",
+        "description": "As I started my studies I was planning on specializing in IT infrastructure, however wile completing mandatory orientation courses I came to the conclusion that software development is more close to heart therefore I decided to specialize in software development. Now as I'm finishing my studies and searching for an internship I am confident I've made the right decision in choosing my specialization and I'm excited to see where the future leads.",
         "icon": "MenuBookIcon",
         "location": "Helsinki, Finland",
         "img": []

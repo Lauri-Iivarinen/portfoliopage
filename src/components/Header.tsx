@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { Link, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 export const Header = () => {
 

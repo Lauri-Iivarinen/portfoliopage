@@ -1,13 +1,10 @@
-import { CardMedia, Box, MobileStepper, Button } from "@mui/material";
+import { Box, MobileStepper, Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 
 interface Props {
     img: string[]
 }
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const [step, setStep] = useState(0)
@@ -40,6 +37,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
                 {images.map((img, index) => {
                     return (
                         <Box
+                            key={index}
                             component="img"
                             sx={{
                                 objectFit: 'contain',

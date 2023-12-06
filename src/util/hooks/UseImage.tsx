@@ -20,6 +20,7 @@ export const useImage = (imgName: string) => {
         }
 
         fetchImage()
+        // eslint-disable-next-line
     }, [imgName])
 
     return {loading, img, error: null}
