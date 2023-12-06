@@ -1,41 +1,39 @@
 import { Box, MobileStepper, Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import SwipeableViews from 'react-swipeable-views';
+import { Slide } from '@mui/material';
 
 interface Props {
     img: string[]
 }
 
+type Direction = "right" | "left" | "up" | "down" | undefined
+
 export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const [step, setStep] = useState(0)
     const [images, setImages] = useState<string[]>([])
+    const [direction, setDirection] = useState<Direction>('right')
     const maxSteps = img.length;
     useEffect(() => {
         setImages(img)
     }, [img])
 
     const next = () => {
+        setDirection('left')
         setStep((prevStep => prevStep + 1))
     }
 
     const prev = () => {
+        setDirection('right')
         setStep((prevStep => prevStep - 1))
     }
-
-    const handleStepChange = (step: number) => {
-        setStep(step);
-      };
-
+    
     return (
         <Box sx={{mt: 1}}>
-            <SwipeableViews
-                
-            index={step}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-            >
-                {images.map((img, index) => {
-                    return (
+            {images.map((img, index) => {
+                return (
+                    <Box>
+                        {index === step &&
+                        <Slide in={true} direction={direction} timeout={500}>
                         <Box
                             key={index}
                             component="img"
@@ -47,10 +45,11 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
                                 margin: 'auto',
                             }}
                             src={img}
-                        ></Box>
-                    )
-                })}
-            </SwipeableViews>
+                        />
+                        </Slide>}
+                </Box>
+                )
+            })}
             <MobileStepper
             steps={maxSteps}
             position="static"
@@ -69,7 +68,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
                 Back
             </Button>
             }
-      />
+            />
         </Box>
     )
 }
