@@ -21,12 +21,12 @@ jobs:
     - name: Create reports folder
       run: mkdir reports
     - name: Run tests
-        run: |
-          docker run --shm-size=2g -e BROWSER=headlesschrome \
-          -v ${PWD}/robot/tests:/opt/robotframework/tests:Z \
-          -v ${{github.workspace}}/robot/out:/opt/robotframework/reports:Z \
-          --user 3001:3001 \
-          ppodgorsek/robot-framework:latest
+      run: |
+        docker run --shm-size=2g -e BROWSER=headlesschrome \
+        -v ${PWD}/robot/tests:/opt/robotframework/tests:Z \
+        -v ${{github.workspace}}/robot/out:/opt/robotframework/reports:Z \
+        --user 3001:3001 \
+        ppodgorsek/robot-framework:latest
     - name: Clean up
       if: always()
       run: |
