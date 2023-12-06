@@ -22,6 +22,7 @@ jobs:
           docker-compose -f docker-compose-start.yaml up -d
     - name: Build and run test container
       run: |
+          mkdir ${{github.workspace}}/reports
           docker-compose -f docker-compose-test.yaml up
     - name: Clean up
       if: always()
