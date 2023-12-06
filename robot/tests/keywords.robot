@@ -3,7 +3,7 @@ Resource    resources.robot
 
 
 *** Variables ***
-${URL}              http://portfolio:3000    # Localhost port 3000
+${URL}              http://172.17.0.1:3000    # Localhost port 3000
 ${BROWSER}          headlesschrome
 
 

@@ -21,9 +21,7 @@ jobs:
           docker-compose -f docker-compose-start.yaml up -d
     - name: Run tests
       run: |
-        docker run --shm-size=2g -e BROWSER=headlesschrome \
-        -v ${{ github.workspace }}/robot/tests:/opt/robotframework/tests:Z \
-        ppodgorsek/robot-framework:latest
+          docker-compose -f docker-compose-test.yaml up
     - name: Clean up
       if: always()
       run: |
