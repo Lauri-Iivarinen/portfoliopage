@@ -23,7 +23,6 @@ jobs:
       run: |
         docker run --shm-size=2g -e BROWSER=headlesschrome \
         -v ${{ github.workspace }}/robot/tests:/opt/robotframework/tests:Z \
-        --user 3001:3001 \
         ppodgorsek/robot-framework:latest
     - name: Clean up
       if: always()

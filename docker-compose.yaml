@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src:/app/src
+    networks:
+    - testing-network
     ports:
         - 3000:3000
     healthcheck:
@@ -17,6 +19,8 @@ services:
   
   robot:
     shm_size: 2gb
+    networks:
+      - testing-network  
     image: ppodgorsek/robot-framework:latest
     volumes:
       - ${PWD}/robot/tests:/opt/robotframework/tests:Z
@@ -25,3 +29,5 @@ services:
     ports:
         - 3001:3001
 
+networks:
+  testing-network:  
