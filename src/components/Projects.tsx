@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Card, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, Slide, Paper, Card, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -97,11 +97,9 @@ export const Projects = () => {
     }, [filter, stableData])
 
     return (
-        <Paper>
-            <Header></Header>
-            <Paper sx={{margin: 2, padding: 2}}>
-                <Typography sx={{marginLeft: 5, margin: 2}}>These are projects I've been working on in and outside of tasks given by Haaga-Helia.</Typography>
-                <Box sx={{position: 'sticky'}}>
+        <Box>
+            <Typography variant='h3' sx={{mt: 4, mb: 4,textAlign: 'center'}}>Projects</Typography>
+                <Box sx={{justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
@@ -144,61 +142,38 @@ export const Projects = () => {
                 </FormControl>
                 <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
                     <Button onClick={resetFilter}>Reset filters</Button>
-                    </FormControl>
+                </FormControl>
                 </Box>
                 <Grid container spacing={2} columnSpacing={2}>
                 {data.map((project, index) =>
-                    <Card elevation={3} key={index} sx={{ margin: 1, width: 500, height: 700, borderWidth: 1, borderColor: 'rgb(100,100,100)', borderStyle: 'solid' }}>
-                        <RenderProjectMedia img={project.img}></RenderProjectMedia>
-                        <CardContent>
-                            <Typography variant='h5'>{project.project}</Typography>
-                            <Typography
-                                sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#26f500'}}
-                                component="a"
-                                href={project.link}
-                            >
-                                GitHub
-                            </Typography>
-                            <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                            <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                            <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
-                            <Box sx={{marginTop: 2, marginBottom: 3}}>
-                                <Typography sx={{ color: '#26f500' }}>Technologies used:
-                                </Typography>
-                                <Grid container={true} spacing={2}>
-                                    {project.technologies.map((item, key) => <Grid key={key} xs={2}><GetIcon iconName={item}></GetIcon></Grid>)}
+                    <Box key={index}>
+                        {index !== 0 && <Box sx={{height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)'}}></Box>}
+                        <Box sx={{ padding: 2, margin: 1, width: '100%', borderWidth: 1}}>
+                            <Grid container={true} spacing={1}>
+                                <Grid xs={6}>
+                                    <RenderProjectMedia img={project.img}></RenderProjectMedia>
                                 </Grid>
-                            </Box>
-                        </CardContent>
-                        
-                        
-                    </Card>
+                                <Grid xs={6}>
+                                    <Typography variant='h5'>{project.project}</Typography>
+                                    <Typography
+                                        sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color:'#9442c1'}}
+                                        component="a"
+                                        href={project.link}
+                                    >GitHub</Typography>
+                                    <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                                    <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                                    <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
+                                    <Typography sx={{ color: '#9442c1', mt: 4, textAlign: 'center' }}>Technologies used:
+                                    </Typography>
+                                    <Grid container={true} spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
+                                        {project.technologies.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Box>
                 )}
                 </Grid>
-            </Paper>
-        </Paper>
+        </Box>
     )
 }
-
-
-/*
-    Unused snippet that may come in handy later
-
- const renderProject = (project: Project, index: number) =>
-        <Box sx={{ margin: 5 }}>
-            {value === index &&
-                <Box>
-                    <Typography variant='h3'>{project.project}</Typography>
-                    <Typography>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                    <Typography>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                    <Typography sx={{ marginTop: 3 }}>{project.description}</Typography>
-                    <Box sx={{marginTop: 3, marginBottom: 3}}>
-                        <Typography>Technologies used:</Typography>
-                        {project.technologies.map((item, index) => <Typography key={index} sx={{marginLeft: 2}}> - {item}</Typography>)}
-                    </Box>
-                    <Link href={project.link}>GitHub</Link>
-                </Box>
-            }
-        </Box>
-    
-*/

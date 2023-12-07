@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
 import { Homepage } from './components/Homepage';
 import { WorkExperience } from './components/WorkExperience';
 import { Projects } from './components/Projects';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { ThemeOptions } from '@mui/material/styles';
-
+/*
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,15 +22,15 @@ const router = createBrowserRouter([
     element: <Projects></Projects>,
   },
 ]);
+*/
 
 const themeOptions: ThemeOptions = {
   palette: {
-    mode: 'dark',
     primary: {
-      main: '#26f500',
+      main: '#9442c1',
     },
     secondary: {
-      main: '#9442c1',
+      main: '#26f500',
     },
   },
   typography: {
@@ -51,7 +46,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+      <Homepage></Homepage>
     </ThemeProvider>
   </React.StrictMode>
 );

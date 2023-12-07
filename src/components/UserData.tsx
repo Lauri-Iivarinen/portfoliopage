@@ -69,8 +69,8 @@ export const UserData = () => {
         </Box>
 
     return (
-        <Box>
-            <Box sx={{ borderWidth: 1, borderStyle: 'solid', padding: 2, width: 320, height: 290 }}>
+        <Box sx={{display: 'flex', justifyContent: 'center'}}>
+            <Box sx={{ borderWidth: 1, borderRadius: 2, borderStyle: 'solid', padding: 2, width: 320, height: 290 }}>
                 <Box ref={containerRef} sx={{height: 230}}>
                     {value === 1 && dataJson()}
                     {value === 0 && dataClassic()}

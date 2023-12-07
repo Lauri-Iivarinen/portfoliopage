@@ -48,8 +48,8 @@ export const WorkExperience = () => {
         <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work"
-            contentStyle={{ background: 'inherit', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
-            contentArrowStyle={{ borderRight: '7px solid  #fff' }}
+            contentStyle={{ background: '#9442c1', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
+            contentArrowStyle={{ borderRight: '7px solid  #9442c1' }}
             date={work.date}
             iconStyle={{ background: '#9442c1', color: 'black' }}
             icon={iconPicker(work.icon)}
@@ -57,14 +57,15 @@ export const WorkExperience = () => {
             <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
             <Typography variant='h5' className="vertical-timeline-element-title">{work.location}</Typography>
             <Typography>{work.smallDescription}</Typography>
-            <Button variant='outlined' color='primary' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
+            <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
         </VerticalTimelineElement>
 
     return (
         <Box>
-            <Header></Header>
-            <Paper sx={{padding: 4}}>
-                <VerticalTimeline>
+            <Typography sx={{textAlign: 'center'}} variant='h3'>Career</Typography>
+                <VerticalTimeline
+                    lineColor='#9442c1'
+                >
                     {data?.map((row, index) => {
                         return timelineElement(row, index)
                     })}
@@ -83,7 +84,6 @@ export const WorkExperience = () => {
                         </Grid>
                     </Box>
                 </Dialog>
-            </Paper>
         </Box>
     )
 }

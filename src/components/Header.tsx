@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { Typography } from "@mui/material";
+import { Typography, Button, MobileStepper } from "@mui/material";
 
-export const Header = () => {
+interface Header {
+  navigateBio?: () => void,
+  navigateCareer?: () => void,
+  navigateProjects?: () => void,
+  navigateGh?: () => void,
+  navigateContact?: () => void,
+}
+interface Route {
+  name: string,
+  nav?: () => void
+}
+
+export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateProjects, navigateGh, navigateContact}) => {
 
   const mouseOver = (e: any) => {
     e.target.style.color = '#26f500'
@@ -16,62 +28,41 @@ export const Header = () => {
     e.target.style.color = 'inherit'
   }
 
-    return (
-    <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static">
+  const routes: Route[] = [
+    {name: 'BIO', nav: navigateBio},
+    {name: 'CAREER', nav: navigateCareer},
+    {name:'PROJECTS', nav: navigateProjects},
+    {name: 'GITHUB', nav: navigateGh},
+    {name: 'CONTACT', nav: navigateContact}
+  ]
+
+  return (
+    <Box sx={{ flexGrow: 1, display: 'block', mb: 8}}>
+       
+      <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'center' }}>
-            <Typography
-              variant="h6"
-              component="a"
-              href="/"
+          {routes.map((route, key) => 
+            <Button key={key} onClick={route.nav}
               sx={{
                 mr: 5,
                 ml: 5,
                 display: { xs: 'none', md: 'flex' },
                 fontWeight: 700,
+                fontSize: 25,
                 color: 'inherit',
-                textDecoration: 'none',
+                background: 'inherit',
+                borderStyle: 'none'
               }}
               onMouseOver={mouseOver}
               onMouseOut={mouseOff}
             >
-                BIO
-              </Typography>
-              <Typography variant="h6"
-              component="a"
-              href="/career"
-              sx={{
-                mr: 5,
-                ml: 5,
-                display: { xs: 'none', md: 'flex' },
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-              onMouseOver={mouseOver}
-              onMouseOut={mouseOff}
-            >
-                CAREER
-              </Typography>
-              <Typography variant="h6"
-              component="a"
-              href="/projects"
-              sx={{
-                mr: 5,
-                ml: 5,
-                display: { xs: 'none', md: 'flex' },
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-              onMouseOver={mouseOver}
-              onMouseOut={mouseOff}
-            >
-                PROJECTS
-              </Typography>
-            
+              {route.name}
+            </Button>
+          )}
+          
         </Toolbar>
       </AppBar>
+      
     </Box>
     )
 }
