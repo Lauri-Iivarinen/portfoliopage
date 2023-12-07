@@ -11,7 +11,7 @@
 # production
 /build
 
-/robot/out/*.png
+/robot/out/
 
 # misc
 .DS_Store

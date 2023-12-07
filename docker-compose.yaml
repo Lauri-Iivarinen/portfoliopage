@@ -23,6 +23,7 @@ services:
       - testing-network  
     image: ppodgorsek/robot-framework:latest
     volumes:
+      - ${PWD}/robot/out:/opt/robotframework/reports:Z
       - ${PWD}/robot/tests:/opt/robotframework/tests:Z
     depends_on:
       - portfolio
