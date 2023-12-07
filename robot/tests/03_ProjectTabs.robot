@@ -51,7 +51,7 @@ Projects can be filtered with group type
     Wait Until Element Is Visible   xpath://*[contains(text(), 'Mobile Chess Game')]
     When User sets group filter to solo
     Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Mobile Chess Game')]
-    Wait Until Element Is Visible   xpath://*[contains(text(), 'Ground Source Heat Pump')]
+    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
 
 
 

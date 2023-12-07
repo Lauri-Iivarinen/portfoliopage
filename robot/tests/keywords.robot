@@ -13,9 +13,9 @@ User has home page open in browser
     Set Window Size    1920    1080
 
 User navigates to projects page
-    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/a[3]
+    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/button[3]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
 
 User navigates to homepage
-    Click Element   xpath://*[@href='/']
+    Click Element   //*[@id="root"]/div/div[1]/header/div/button[1]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]

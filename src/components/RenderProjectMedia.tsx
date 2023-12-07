@@ -1,5 +1,5 @@
-import { Box, MobileStepper, Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import { Box, MobileStepper, Button, Fade } from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
 import { Slide } from '@mui/material';
 
 interface Props {
@@ -13,6 +13,8 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const [images, setImages] = useState<string[]>([])
     const [direction, setDirection] = useState<Direction>('right')
     const maxSteps = img.length;
+    const containerRef = useRef<HTMLElement>(null);
+    
     useEffect(() => {
         setImages(img)
     }, [img])
@@ -28,25 +30,29 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     }
     
     return (
-        <Box sx={{mt: 1}}>
+        <Box sx={{mt: 1, width: '100%'}}>
             {images.map((img, index) => {
                 return (
-                    <Box>
+                    <Box key={index}>
                         {index === step &&
-                        <Slide in={true} direction={direction} timeout={500}>
+                        <Fade in={true} timeout={500}>
                         <Box
                             key={index}
                             component="img"
                             sx={{
                                 objectFit: 'contain',
                                 display: 'block',
-                                maxWidth: '100%',
-                                height: '200px',
+                                maxWidth: '80%',
+                                height: '300px',
                                 margin: 'auto',
+                                borderStyle: 'solid',
+                                borderWidth: 1,
+                                borderRadius: 4,
+                                borderColor: 'rgb(200,200,200)'
                             }}
                             src={img}
                         />
-                        </Slide>}
+                        </Fade>}
                 </Box>
                 )
             })}
@@ -54,6 +60,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
             steps={maxSteps}
             position="static"
             activeStep={step}
+            color="inherit"
             nextButton={
             <Button
                 size="small"
