@@ -156,14 +156,14 @@ export const Projects = () => {
                                 <Grid xs={6}>
                                     <Typography variant='h5'>{project.project}</Typography>
                                     <Typography
-                                        sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color:'#9442c1'}}
+                                        sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color:'#16BAC5'}}
                                         component="a"
                                         href={project.link}
                                     >GitHub</Typography>
-                                    <Typography sx={{alignItems: 'center', display: 'flex'}}>School project: {project.school ? <CheckBoxIcon sx={{ color: 'green', display: 'flex', alignItems: 'center', justifyContent: 'center' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
-                                    <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red' }} />}</Typography>
+                                    <Typography sx={{ alignItems: 'center', display: 'flex', width: 200}}>School project: {project.school ? <CheckBoxIcon sx={{ ml: 1, color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml:1 }} />}</Typography>
+                                    <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green', ml: 1.5 }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1.5 }} />}</Typography>
                                     <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
-                                    <Typography sx={{ color: '#9442c1', mt: 4, textAlign: 'center' }}>Technologies used:
+                                    <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>Technologies used:
                                     </Typography>
                                     <Grid container={true} spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
                                         {project.technologies.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}

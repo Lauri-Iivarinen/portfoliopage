@@ -48,10 +48,10 @@ export const WorkExperience = () => {
         <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work"
-            contentStyle={{ background: '#9442c1', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
-            contentArrowStyle={{ borderRight: '7px solid  #9442c1' }}
+            contentStyle={{ background: '#16BAC5', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
+            contentArrowStyle={{ borderRight: '7px solid  #16BAC5' }}
             date={work.date}
-            iconStyle={{ background: '#9442c1', color: 'black' }}
+            iconStyle={{ background: '#16BAC5', color: 'black' }}
             icon={iconPicker(work.icon)}
         >
             <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
@@ -64,7 +64,7 @@ export const WorkExperience = () => {
         <Box>
             <Typography sx={{textAlign: 'center'}} variant='h3'>Career</Typography>
                 <VerticalTimeline
-                    lineColor='#9442c1'
+                    lineColor='#16BAC5'
                 >
                     {data?.map((row, index) => {
                         return timelineElement(row, index)

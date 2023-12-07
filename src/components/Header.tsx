@@ -24,7 +24,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
   const [navigateTo, setNavigateTo] = useState<Route>()
 
   const mouseOver = (e: any) => {
-    e.target.style.color = 'black'
+    e.target.style.color = '#fff'
     //purple: #9442c1
     //green: #26f500
   }
