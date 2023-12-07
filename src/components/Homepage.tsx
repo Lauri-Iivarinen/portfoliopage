@@ -10,6 +10,7 @@ import { Projects } from "./Projects"
 import { Button } from "@mui/base"
 import { RenderBio } from "./RenderBio"
 
+
 export const Homepage = () => {
 
     const bioRef = useRef<any>(null)
@@ -60,8 +61,6 @@ export const Homepage = () => {
     const navigateContacts = () => {
         const pos = contactRef.current.getBoundingClientRect().top
         const location = pos + window.scrollY - headerOffset
-
-        console.log(contactRef.current.getBoundingClientRect())
       
         window.scrollTo({
              top: location,
