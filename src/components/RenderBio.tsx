@@ -15,7 +15,7 @@ export const RenderBio = () => {
 
     const fetchStackPref = async () => {
         try {
-            const res = await fetch(`http://${backend}/api/stack`)
+            const res = await fetch(`http://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/stack`)
             const result = await res.json()
             setIcons(result)
             setLoading(false)
