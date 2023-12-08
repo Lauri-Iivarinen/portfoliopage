@@ -11,7 +11,6 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { RenderImage } from "./RenderImage";
 
 export const WorkExperience = () => {
-    const [data, setData] = useState<Work[]>()
     const [toggleModal, setToggleModal] = useState<boolean>(false)
     const [activeWork, setActiveWork] = useState<Work>()
     const [work, setWork] = useState<Work[]>([])

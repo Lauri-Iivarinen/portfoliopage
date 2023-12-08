@@ -91,7 +91,7 @@ export const Homepage = () => {
                     <GitHubStats></GitHubStats>
                 </Box>
                 <Box ref={contactRef}>
-                    <Typography variant='h3' sx={{textAlign: 'center', m: 4}}>Contact details</Typography>
+                    <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1: 4}}>Contact details</Typography>
                     <UserData></UserData>
                 </Box>
             </Box>
