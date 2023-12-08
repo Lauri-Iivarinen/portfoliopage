@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Paper, Typography, Button, Dialog } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Paper, Typography, Button, Dialog, CircularProgress } from "@mui/material";
 import { Header } from "./Header";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -9,7 +9,6 @@ import ChurchIcon from '@mui/icons-material/Church';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import workData from '../util/workData.json'
 import { Work } from "../util/types/Work";
-import { useEffect } from "react";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { RenderImage } from "./RenderImage";
 
@@ -17,8 +16,22 @@ export const WorkExperience = () => {
     const [data, setData] = useState<Work[]>()
     const [toggleModal, setToggleModal] = useState<boolean>(false)
     const [activeWork, setActiveWork] = useState<Work>()
+    const [work, setWork] = useState<Work[]>([])
+    const [loading, setLoading] = useState(true)
+    const backend = process.env.REACT_APP_BACKEND_URL
 
-    useEffect(() => { setData(workData) }, [])
+    const fetchWorkData = async () => {
+        try {
+            const response = await fetch(`http://${backend}/api/career`)
+            const result = await response.json()
+            setWork(result)
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => { fetchWorkData() }, [])
 
     const handleOpen = (work: Work) => {
         setActiveWork(work)
@@ -63,13 +76,13 @@ export const WorkExperience = () => {
     return (
         <Box>
             <Typography sx={{textAlign: 'center'}} variant='h3'>Career</Typography>
-                <VerticalTimeline
+
+                {!loading ? <VerticalTimeline
                     lineColor='#16BAC5'
-                >
-                    {data?.map((row, index) => {
-                        return timelineElement(row, index)
-                    })}
-                </VerticalTimeline>
+                >{work.map((row, index) => {
+                    return timelineElement(row, index)
+                })}</VerticalTimeline>: <Box  sx={{ display:'flex', justifyContent: 'center', alignItems: 'center'}}><CircularProgress></CircularProgress></Box>}
+
                 <Dialog open={toggleModal} onClose={handleClose}>
                     <Box sx={{padding: 5, borderWidth: 2, borderColor: 'black', borderStyle: 'solid'}}>
                         <Typography variant='h6' sx={{marginBottom: 2}}>{ activeWork?.workTitle }</Typography>

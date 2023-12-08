@@ -1,4 +1,4 @@
-import { Box, Typography, Slide, Paper, Card, CardContent, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, Slide, Paper, Card, CardContent, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
@@ -18,10 +18,23 @@ export const Projects = () => {
     const [filter, setFilter] = useState('Name')
     const [typeFilter, setTypeFilter] = useState('all')
     const [groupFilter, setGroupFilter] = useState('all')
+    const [loading, setLoading] = useState(true)
+    const backend = process.env.REACT_APP_BACKEND_URL
+
+    const fetchProjects = async () => {
+        try {
+            const response = await fetch(`http://${backend}/api/projects`)
+            const result = await response.json()
+            setData(result)
+            setStableData(result)
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     useEffect(() => {
-        setStableData(projectData)
-        setData(projectData)
+        fetchProjects()
         // eslint-disable-next-line
     }, [])
 
@@ -144,36 +157,39 @@ export const Projects = () => {
                     <Button onClick={resetFilter}>Reset filters</Button>
                 </FormControl>
                 </Box>
-                <Grid container spacing={2} columnSpacing={2}>
-                {data.map((project, index) =>
-                    <Box key={index}>
-                        {index !== 0 && <Box sx={{height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)'}}></Box>}
-                        <Box sx={{ padding: 2, margin: 1, width: '100%', borderWidth: 1}}>
-                            <Grid container={true} spacing={1}>
-                                <Grid xs={6}>
-                                    <RenderProjectMedia img={project.img}></RenderProjectMedia>
-                                </Grid>
-                                <Grid xs={6}>
-                                    <Typography variant='h5'>{project.project}</Typography>
-                                    <Typography
-                                        sx={{float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color:'#16BAC5'}}
-                                        component="a"
-                                        href={project.link}
-                                    >GitHub</Typography>
-                                    <Typography sx={{ alignItems: 'center', display: 'flex', width: 200}}>School project: {project.school ? <CheckBoxIcon sx={{ ml: 1, color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml:1 }} />}</Typography>
-                                    <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green', ml: 1.5 }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1.5 }} />}</Typography>
-                                    <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
-                                    <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>Technologies used:
-                                    </Typography>
-                                    <Grid container={true} spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
-                                        {project.technologies.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}
+            
+                {loading
+                    ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><CircularProgress></CircularProgress></Box> 
+                    
+                    : <Grid container spacing={2} columnSpacing={2}>{data.map((project, index) =>
+                        <Box key={index}>
+                            {index !== 0 && <Box sx={{ height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)' }}></Box>}
+                            <Box sx={{ padding: 2, margin: 1, width: '100%', borderWidth: 1 }}>
+                                <Grid container={true} spacing={1}>
+                                    <Grid xs={6}>
+                                        <RenderProjectMedia img={project.img}></RenderProjectMedia>
+                                    </Grid>
+                                    <Grid xs={6}>
+                                        <Typography variant='h5'>{project.project}</Typography>
+                                        <Typography
+                                            sx={{ float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#16BAC5' }}
+                                            component="a"
+                                            href={project.link}
+                                        >GitHub</Typography>
+                                        <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>School project: {project.school ? <CheckBoxIcon sx={{ ml: 1, color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1 }} />}</Typography>
+                                        <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green', ml: 1.5 }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1.5 }} />}</Typography>
+                                        <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
+                                        <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>Technologies used:
+                                        </Typography>
+                                        <Grid container={true} spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                                            {project.technologies.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}
+                                        </Grid>
                                     </Grid>
                                 </Grid>
-                            </Grid>
+                            </Box>
                         </Box>
-                    </Box>
-                )}
-                </Grid>
+                    )}
+                    </Grid>}
         </Box>
     )
 }
