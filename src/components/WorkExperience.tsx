@@ -16,7 +16,7 @@ export const WorkExperience = () => {
     const [activeWork, setActiveWork] = useState<Work>()
     const [work, setWork] = useState<Work[]>([])
     const [loading, setLoading] = useState(true)
-    const backend = process.env.REACT_APP_BACKEND_URL
+    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
 
     const fetchWorkData = async () => {
         try {
