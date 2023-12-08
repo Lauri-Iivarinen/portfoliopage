@@ -64,5 +64,5 @@ export const GetIcon: React.FC<Props> = ({ iconName }) => {
         }
     }
 
-    return <Tooltip title={iconName}><IconButton>{fetchIcon(icon)}</IconButton></Tooltip>
+    return <Tooltip title={iconName}><IconButton sx={{cursor: 'default'}}>{fetchIcon(icon)}</IconButton></Tooltip>
 }

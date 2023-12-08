@@ -26,8 +26,13 @@ jobs:
           docker-compose -f docker-compose-start.yaml up -d
     - name: Run tests
       run: |
-          docker-compose -f docker-compose-test.yaml up
+          docker run \
+          --shm-size=2g \
+          -v ${PWD}/robot/tests:/opt/robotframework/tests:Z:/opt/robotframework/tests:Z \
+          ppodgorsek/robot-framework:latest
     - name: Clean up
       if: always()
       run: |
         docker compose down
+  
+        
