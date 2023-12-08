@@ -28,7 +28,7 @@ jobs:
       run: |
           docker run \
           --shm-size=2g \
-          -v ${PWD}/robot/tests:/opt/robotframework/tests:Z:/opt/robotframework/tests:Z \
+          -v ${PWD}/robot/tests:/opt/robotframework/tests:Z \
           ppodgorsek/robot-framework:latest
     - name: Clean up
       if: always()
