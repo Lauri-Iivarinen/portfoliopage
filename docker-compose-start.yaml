@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src:/app/src
-    env_file:
-      - .env
+    environment:
+      REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
     ports:
       - 3000:3000
     expose:
