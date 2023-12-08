@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import image from '../util/img/me2.jpg'
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Paper, Typography, CircularProgress } from "@mui/material"
+import { Box, Typography, CircularProgress } from "@mui/material"
 import stackPref from '../util/stackPref.json'
 import { GetIcon } from "./GetIcon";
 
@@ -11,11 +11,11 @@ export const RenderBio = () => {
 
     const [icons, setIcons] = useState([])
     const [loading, setLoading] = useState(true)
-    const backend = process.env.REACT_APP_BACKEND_URL
+    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
 
     const fetchStackPref = async () => {
         try {
-            const res = await fetch(`https://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/stack`)
+            const res = await fetch(`${backend}/api/stack`)
             const result = await res.json()
             setIcons(result)
             setLoading(false)

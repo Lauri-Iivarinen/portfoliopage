@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Box, Paper, Typography, Button, Dialog, CircularProgress } from "@mui/material";
-import { Header } from "./Header";
+import { Box, Typography, Button, Dialog, CircularProgress } from "@mui/material";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import ChurchIcon from '@mui/icons-material/Church';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import workData from '../util/workData.json'
 import { Work } from "../util/types/Work";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { RenderImage } from "./RenderImage";
@@ -18,11 +16,11 @@ export const WorkExperience = () => {
     const [activeWork, setActiveWork] = useState<Work>()
     const [work, setWork] = useState<Work[]>([])
     const [loading, setLoading] = useState(true)
-    const backend = process.env.REACT_APP_BACKEND_URL
+    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
 
     const fetchWorkData = async () => {
         try {
-            const response = await fetch(`https://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/career`)
+            const response = await fetch(`${backend}/api/career`)
             const result = await response.json()
             setWork(result)
             setLoading(false)

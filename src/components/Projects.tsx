@@ -1,9 +1,7 @@
-import { Box, Typography, Slide, Paper, Card, CardContent, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
-import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import projectData from '../util/projectData.json'
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
 import { RenderProjectMedia } from "./RenderProjectMedia";
@@ -19,11 +17,11 @@ export const Projects = () => {
     const [typeFilter, setTypeFilter] = useState('all')
     const [groupFilter, setGroupFilter] = useState('all')
     const [loading, setLoading] = useState(true)
-    const backend = process.env.REACT_APP_BACKEND_URL
+    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch(`https://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/projects`)
+            const response = await fetch(`${backend}/api/projects`)
             const result = await response.json()
             setData(result)
             setStableData(result)

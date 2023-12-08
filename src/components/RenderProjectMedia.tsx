@@ -1,6 +1,5 @@
 import { Box, MobileStepper, Button, Fade } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
-import { Slide } from '@mui/material';
 
 interface Props {
     img: string[]

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { Typography, Button, MobileStepper, Hidden, Drawer, IconButton } from "@mui/material";
+import { Button, Hidden, Drawer, IconButton } from "@mui/material";
 import TableRowsIcon from '@mui/icons-material/TableRows';
 
 interface Header {
