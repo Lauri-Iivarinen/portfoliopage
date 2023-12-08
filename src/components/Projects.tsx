@@ -23,7 +23,7 @@ export const Projects = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch(`${backend}/api/projects`)
+            const response = await fetch(`https://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/projects`)
             const result = await response.json()
             setData(result)
             setStableData(result)
