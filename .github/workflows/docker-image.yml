@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 env:
-  REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL }}
+  REACT_APP_BACKEND_URL: ${{ vars.BACKEND_URL }}
 
 jobs:
   build-and-test:

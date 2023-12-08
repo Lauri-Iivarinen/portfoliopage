@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import image from '../util/img/me2.jpg'
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Paper, Typography, CircularProgress } from "@mui/material"
+import { Box, Typography, CircularProgress } from "@mui/material"
 import stackPref from '../util/stackPref.json'
 import { GetIcon } from "./GetIcon";
 

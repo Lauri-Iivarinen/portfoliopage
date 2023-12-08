@@ -1,9 +1,7 @@
-import { Box, Typography, Slide, Paper, Card, CardContent, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
-import { Header } from "./Header";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import projectData from '../util/projectData.json'
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
 import { RenderProjectMedia } from "./RenderProjectMedia";

@@ -1,13 +1,10 @@
-import { Box, Paper, Typography, MobileStepper } from "@mui/material"
+import { Box, Paper, Typography } from "@mui/material"
 import React, {useRef} from "react"
 import { Header } from "./Header"
 import { UserData } from "./UserData"
-import image from '../util/img/me1.jpg'
-import Grid from '@mui/material/Unstable_Grid2';
 import { GitHubStats } from "./GitHubStats"
 import { WorkExperience } from "./WorkExperience"
 import { Projects } from "./Projects"
-import { Button } from "@mui/base"
 import { RenderBio } from "./RenderBio"
 
 
