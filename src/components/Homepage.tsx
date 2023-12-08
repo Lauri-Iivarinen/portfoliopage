@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from "@mui/material"
+import { Box, Paper, Typography, useMediaQuery } from "@mui/material"
 import React, {useRef} from "react"
 import { Header } from "./Header"
 import { UserData } from "./UserData"
@@ -15,7 +15,7 @@ export const Homepage = () => {
     const projectsRef = useRef<any>(null)
     const ghRef = useRef<any>(null)
     const contactRef = useRef<any>(null)
-
+    const mobile = useMediaQuery('(max-width:900px)')
     const headerOffset = 60;
 
     const navigateBio = () => {
@@ -66,7 +66,7 @@ export const Homepage = () => {
     }
     
     return (
-        <Paper sx={{paddingBottom: 10}}>
+        <Box sx={{paddingBottom: 10}}>
             <Header 
             navigateBio={navigateBio} 
             navigateCareer={navigateCareer} 
@@ -74,7 +74,7 @@ export const Homepage = () => {
             navigateGh={navigateGh}
             navigateContact={navigateContacts}
             />
-            <Box sx={{ mt: 10,margin: 6, marginTop: 4, padding: 2, pt: 5}}>
+            <Box sx={{ mt: 10, margin: mobile? 2: 6, marginTop: 4, padding: 2, pt: 5}}>
                 <Box>
                     <RenderBio></RenderBio>
                 </Box>
@@ -87,7 +87,7 @@ export const Homepage = () => {
                     <Projects></Projects>
                 </Box>
                 <Box ref={ghRef}>
-                <Typography variant='h3' sx={{textAlign: 'center', m: 4}}>GitHub</Typography>
+                <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1 : 4}}>GitHub</Typography>
                     <GitHubStats></GitHubStats>
                 </Box>
                 <Box ref={contactRef}>
@@ -95,6 +95,6 @@ export const Homepage = () => {
                     <UserData></UserData>
                 </Box>
             </Box>
-        </Paper>
+        </Box>
     )
 }

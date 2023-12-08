@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Button, Dialog, CircularProgress } from "@mui/material";
+import { Box, Typography, Button, Dialog, CircularProgress, useMediaQuery } from "@mui/material";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
@@ -17,6 +17,8 @@ export const WorkExperience = () => {
     const [work, setWork] = useState<Work[]>([])
     const [loading, setLoading] = useState(true)
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
+    const mobile = useMediaQuery('(max-width:1169px)')
+    const mobileDialog = useMediaQuery('(max-width:600px)')
 
     const fetchWorkData = async () => {
         try {
@@ -65,10 +67,11 @@ export const WorkExperience = () => {
             iconStyle={{ background: '#16BAC5', color: 'black' }}
             icon={iconPicker(work.icon)}
         >
+            {mobile && <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>}
             <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
             <Typography variant='h5' className="vertical-timeline-element-title">{work.location}</Typography>
             <Typography>{work.smallDescription}</Typography>
-            <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>
+            {!mobile && <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>}
         </VerticalTimelineElement>
 
     return (
@@ -82,7 +85,7 @@ export const WorkExperience = () => {
                 })}</VerticalTimeline>: <Box  sx={{ display:'flex', justifyContent: 'center', alignItems: 'center'}}><CircularProgress></CircularProgress></Box>}
 
                 <Dialog open={toggleModal} onClose={handleClose}>
-                    <Box sx={{padding: 5, borderWidth: 2, borderColor: 'black', borderStyle: 'solid'}}>
+                    <Box sx={{padding: mobileDialog? 1:5, borderWidth: 2, borderColor: 'black', borderStyle: 'solid'}}>
                         <Typography variant='h6' sx={{marginBottom: 2}}>{ activeWork?.workTitle }</Typography>
                         <Typography>
                             {activeWork?.description}
