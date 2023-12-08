@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 env:
-  REACT_APP_BACKEND_URL: ${{ vars.BACKEND_URL }}
+  REACT_APP_BACKEND_URL: https://iivarinen-lauri-back-0774fd593a23.herokuapp.com
 
 jobs:
   build-and-test:
