@@ -22,7 +22,7 @@ export const WorkExperience = () => {
 
     const fetchWorkData = async () => {
         try {
-            const response = await fetch(`http://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/career`)
+            const response = await fetch(`https://iivarinen-lauri-back-0774fd593a23.herokuapp.com/api/career`)
             const result = await response.json()
             setWork(result)
             setLoading(false)
