@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { Button, Hidden, Drawer, IconButton } from "@mui/material";
+import { Button, Hidden, Drawer, IconButton, useMediaQuery } from "@mui/material";
 import TableRowsIcon from '@mui/icons-material/TableRows';
 
 interface Header {
@@ -22,6 +22,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
   const [drawer, setDrawer] = useState<boolean>(false)
   const [routes, setRoutes] = useState<Route[]>([])
   const [navigateTo, setNavigateTo] = useState<Route>()
+  const mobile = useMediaQuery('(max-width:900px)')
 
   const mouseOver = (e: any) => {
     e.target.style.color = '#fff'
@@ -53,9 +54,40 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
 
   return (
     <Box sx={{ flexGrow: 1, display: 'block', mb: 8}}>
-       
       <AppBar position="fixed">
-        <Hidden only={['sm', 'md' ]}>
+        {mobile ?
+          <Box>
+            <Toolbar>
+              <IconButton sx={{color: '#fff'}} onClick={() => setDrawer(true)}><TableRowsIcon></TableRowsIcon></IconButton>
+            </Toolbar>
+            <Drawer
+            anchor='left'
+            open={drawer}
+            onClose={() => setDrawer(false)}
+            >
+              <Box sx={{width: 300, mt: 10}}>
+              {routes.map((route, key) => 
+                <Button key={key} onClick={() => setNavigateTo(route)}
+                  sx={{
+                    height: 50,
+                    borderStyle: 'solid',
+                    borderWidth: 2,
+                    mr: 5,
+                    ml: 5,
+                    mb: 5,
+                    fontWeight: 700,
+                    fontSize: 25,
+                    color: 'inherit',
+                    background: 'inherit'
+                  }}
+                >
+                  {route.name}
+                </Button>
+              )}
+              </Box>
+            </Drawer>
+          </Box>
+          :
           <Toolbar sx={{ justifyContent: 'center' }}>
             {routes.map((route, key) => 
               <Button key={key} onClick={route.nav}
@@ -65,7 +97,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
                   display: { xs: 'none', md: 'flex' },
                   fontWeight: 700,
                   fontSize: 25,
-                  color: 'inherit',
+                  color: mobile? 'red': 'inherit',
                   background: 'inherit',
                   borderStyle: 'none'
                 }}
@@ -76,39 +108,10 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
               </Button>
             )}
             
-          </Toolbar>
-        </Hidden>
-        <Hidden only={['lg', 'xl']}>
-        <Toolbar>
-          <IconButton sx={{color: '#fff'}} onClick={() => setDrawer(true)}><TableRowsIcon></TableRowsIcon></IconButton>
-        </Toolbar>
-        <Drawer
-        anchor='left'
-        open={drawer}
-        onClose={() => setDrawer(false)}
-        >
-          <Box sx={{width: 300}}>
-          {routes.map((route, key) => 
-            <Button key={key} onClick={() => setNavigateTo(route)}
-              sx={{
-                mr: 5,
-                ml: 5,
-                fontWeight: 700,
-                fontSize: 25,
-                color: 'inherit',
-                background: 'inherit',
-                borderStyle: 'none'
-              }}
-            >
-              {route.name}
-            </Button>
-          )}
-          </Box>
-        </Drawer>
-        </Hidden>
+          </Toolbar>}
+
         
       </AppBar>
-      
     </Box>
     )
 }

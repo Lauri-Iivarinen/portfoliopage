@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react"
 import image from '../util/img/me2.jpg'
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Typography, CircularProgress } from "@mui/material"
+import { Box, Typography, CircularProgress, useMediaQuery } from "@mui/material"
 import stackPref from '../util/stackPref.json'
 import { GetIcon } from "./GetIcon";
 
 export const RenderBio = () => {
 
     const stack: string[] = stackPref
+    const mobile = useMediaQuery('(max-width:900px)')
 
     const [icons, setIcons] = useState([])
     const [loading, setLoading] = useState(true)
@@ -30,8 +31,8 @@ export const RenderBio = () => {
     return(
         <Grid container={true} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid xs={5}>
-            <Box sx={{float:'right', mr: 5}}>
-                <img width='500px' alt='Lauri Iivarinen' src={image} />
+            <Box sx={{float: mobile? '' : 'right', mr: 5, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <img width={mobile? '350px' : '500px'} alt='Lauri Iivarinen' src={image} />
             </Box>
         </Grid>
         <Grid xs={7}>

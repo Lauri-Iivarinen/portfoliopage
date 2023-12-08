@@ -7,6 +7,7 @@ import { UserData } from "./UserData";
 export const GitHubStats = () => {
 
     const ghUsername = 'Lauri-Iivarinen'
+    
 
     return (
         <Box sx={{display:'flex', justifyContent: 'center', marginTop: 5, marginBottom: 2}}>

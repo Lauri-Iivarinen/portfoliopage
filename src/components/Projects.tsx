@@ -1,4 +1,4 @@
-import { Box, Typography, CircularProgress, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, CircularProgress, useMediaQuery, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -18,6 +18,7 @@ export const Projects = () => {
     const [groupFilter, setGroupFilter] = useState('all')
     const [loading, setLoading] = useState(true)
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
+    const mobile = useMediaQuery('(max-width:900px)')
 
     const fetchProjects = async () => {
         try {
@@ -110,7 +111,8 @@ export const Projects = () => {
     return (
         <Box>
             <Typography variant='h3' sx={{mt: 4, mb: 4,textAlign: 'center'}}>Projects</Typography>
-                <Box sx={{justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
+            <Box sx={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+                <Grid container={true}>
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
@@ -153,7 +155,8 @@ export const Projects = () => {
                 </FormControl>
                 <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
                     <Button onClick={resetFilter}>Reset filters</Button>
-                </FormControl>
+                    </FormControl>
+                </Grid>
                 </Box>
             
                 {loading
@@ -164,10 +167,10 @@ export const Projects = () => {
                             {index !== 0 && <Box sx={{ height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)' }}></Box>}
                             <Box sx={{ padding: 2, margin: 1, width: '100%', borderWidth: 1 }}>
                                 <Grid container={true} spacing={1}>
-                                    <Grid xs={6}>
+                                    <Grid xs={mobile? 12: 6}>
                                         <RenderProjectMedia img={project.img}></RenderProjectMedia>
                                     </Grid>
-                                    <Grid xs={6}>
+                                    <Grid xs={mobile? 12: 6}>
                                         <Typography variant='h5'>{project.project}</Typography>
                                         <Typography
                                             sx={{ float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#16BAC5' }}
