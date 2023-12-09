@@ -23,6 +23,14 @@ export const Homepage = () => {
             top: 0
         })
     }
+
+    const mobileStyle = {
+        
+    }
+
+    const defaultStyle = {
+
+    }
     
     const navigateCareer = () => {
           const pos = careerRef.current.getBoundingClientRect().top
@@ -65,7 +73,7 @@ export const Homepage = () => {
     }
     
     return (
-        <Box sx={{paddingBottom: 10}}>
+        <Box sx={{paddingBottom: 10, width: '100%', overflow: 'hidden'}}>
             <Header 
             navigateBio={navigateBio} 
             navigateCareer={navigateCareer} 
