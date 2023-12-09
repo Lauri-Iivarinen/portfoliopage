@@ -73,7 +73,7 @@ export const Homepage = () => {
             navigateGh={navigateGh}
             navigateContact={navigateContacts}
             />
-            <Box sx={{ mt: 10, margin: mobile? 2: 6, marginTop: 4, padding: 2, pt: 5}}>
+            <Box sx={{ mt: 10, margin: mobile? 1 : 6, marginTop: 4, padding: mobile? 1 : 2, pt: 5}}>
                 <Box>
                     <RenderBio></RenderBio>
                 </Box>
