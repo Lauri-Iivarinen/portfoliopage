@@ -162,7 +162,7 @@ export const Projects = () => {
                     : <Grid container spacing={mobile? 0: 2} columnSpacing={2}>{data.map((project, index) =>
                         <Box key={index}>
                             {index !== 0 && <Box sx={{ height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)' }}></Box>}
-                            <Box sx={{ padding: mobile? 1: 2, margin: 1, width: '100%', borderWidth: 1 }}>
+                            <Box sx={{ padding: mobile? 0: 2, margin: 1, width: '100%', borderWidth: 1 }}>
                                 <Grid container={true} spacing={1}>
                                     <Grid xs={mobile? 12: 6}>
                                         <RenderProjectMedia img={project.img}></RenderProjectMedia>
