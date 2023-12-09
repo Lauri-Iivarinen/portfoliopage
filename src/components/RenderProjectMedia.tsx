@@ -1,60 +1,65 @@
-import { Box, MobileStepper, Button, Fade } from "@mui/material";
+import { Box, MobileStepper, Button } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
+import { Carousel } from "react-configurable-carousel";
 
 interface Props {
     img: string[]
 }
 
-type Direction = "right" | "left" | "up" | "down" | undefined
-
 export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const [step, setStep] = useState(0)
-    const [images, setImages] = useState<string[]>([])
-    const [direction, setDirection] = useState<Direction>('right')
+    const [images, setImages] = useState<any[]>([])
     const maxSteps = img.length;
-    const containerRef = useRef<HTMLElement>(null);
+    const containerRef = useRef<any>(null);
     
     useEffect(() => {
         setImages(img)
     }, [img])
 
     const next = () => {
-        setDirection('left')
         setStep((prevStep => prevStep + 1))
+        containerRef.current.shiftRight()
     }
 
     const prev = () => {
-        setDirection('right')
         setStep((prevStep => prevStep - 1))
+        containerRef.current.shiftLeft()
     }
     
     return (
-        <Box sx={{mt: 1, width: '100%'}}>
+        <Box sx={{ mt: 1, width: '100%' }}>
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+            <Carousel
+            ref={containerRef}
+            arrows={false}
+            dotsNavigation={false}
+            dotsNavigationInside={true}
+            width={"80%"}
+            height={"300px"}
+            carouselStyle={'flat'}
+            >
             {images.map((img, index) => {
                 return (
-                    <Box key={index}>
-                        {index === step &&
-                        <Fade in={true} timeout={500}>
-                        <Box
-                            key={index}
-                            component="img"
-                            sx={{
-                                objectFit: 'contain',
-                                display: 'block',
-                                maxWidth: '80%',
-                                height: '300px',
-                                margin: 'auto',
-                                borderStyle: 'solid',
-                                borderWidth: 1,
-                                borderRadius: 4,
-                                borderColor: 'rgb(200,200,200)'
-                            }}
-                            src={img}
-                        />
-                        </Fade>}
-                </Box>
+                    <Box
+                        key={index}
+                        component="img"
+                        sx={{
+                            objectFit: 'contain',
+                            display: 'block',
+                            maxWidth: '80%',
+                            height: '300px',
+                            margin: 'auto',
+                            borderStyle: 'solid',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            borderColor: 'rgb(200,200,200)',
+                        }}
+                        src={img}
+                    />
                 )
             })}
+            </Carousel>
+            </Box>
             <MobileStepper
             steps={maxSteps}
             position="static"
@@ -74,7 +79,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
                 Back
             </Button>
             }
-            />
+            />            
         </Box>
     )
 }
