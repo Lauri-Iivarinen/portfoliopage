@@ -1,4 +1,4 @@
-import { Box, Paper, Typography, useMediaQuery } from "@mui/material"
+import { Box, Typography, useMediaQuery } from "@mui/material"
 import React, {useRef} from "react"
 import { Header } from "./Header"
 import { UserData } from "./UserData"
@@ -10,7 +10,6 @@ import { RenderBio } from "./RenderBio"
 
 export const Homepage = () => {
 
-    const bioRef = useRef<any>(null)
     const careerRef = useRef<any>(null)
     const projectsRef = useRef<any>(null)
     const ghRef = useRef<any>(null)

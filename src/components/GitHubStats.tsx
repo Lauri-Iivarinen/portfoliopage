@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, useMediaQuery } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import React from "react";
 import { useEffect, useState } from "react";
@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export const GitHubStats = () => {
 
     const ghUsername = 'Lauri-Iivarinen'
-    
+    const mobile = useMediaQuery('(max-width:535px)')
     const [load, setLoad] = useState(true)
     
     useEffect(() => {
@@ -20,7 +20,7 @@ export const GitHubStats = () => {
                 <Grid container={true}>
                     <Grid>
                         <a href={"https://github.com/"+ghUsername}>
-                            <img alt="Lauri-Iivarinen Github Stats" loading='eager' height='200px' src={`https://github-readme-stats.vercel.app/api?username=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true`} />
+                            <img alt="Lauri-Iivarinen Github Stats" loading='eager' height={mobile? '120px':'200px'} src={`https://github-readme-stats.vercel.app/api?username=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true`} />
                         </a>
                     </Grid>
                     <Grid>
@@ -30,7 +30,7 @@ export const GitHubStats = () => {
                     </Grid>
                     <Grid>
                         <a href={"https://github.com/"+ghUsername}>
-                            <img alt="Lauris's Streak" height='200px' loading='eager' src={`https://github-readme-streak-stats.herokuapp.com/?user=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true&bg_color=0D1117`}/>
+                            <img alt="Lauris's Streak" height={mobile? '120px':'200px'} loading='eager' src={`https://github-readme-streak-stats.herokuapp.com/?user=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true&bg_color=0D1117`}/>
                         </a>
                     </Grid>
                 </Grid>

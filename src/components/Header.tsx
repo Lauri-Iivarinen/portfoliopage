@@ -2,22 +2,12 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { Button, Hidden, Drawer, IconButton, useMediaQuery } from "@mui/material";
+import { Button, Drawer, IconButton, useMediaQuery } from "@mui/material";
 import TableRowsIcon from '@mui/icons-material/TableRows';
+import { HeaderProps } from "../util/types/HeaderProps";
+import { Route } from "../util/types/Route";
 
-interface Header {
-  navigateBio?: () => void,
-  navigateCareer?: () => void,
-  navigateProjects?: () => void,
-  navigateGh?: () => void,
-  navigateContact?: () => void,
-}
-interface Route {
-  name: string,
-  nav: () => void
-}
-
-export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateProjects, navigateGh, navigateContact}) => {
+export const Header: React.FC<HeaderProps> = ({navigateBio, navigateCareer, navigateProjects, navigateGh, navigateContact}) => {
 
   const [drawer, setDrawer] = useState<boolean>(false)
   const [routes, setRoutes] = useState<Route[]>([])
@@ -44,6 +34,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
 
   useEffect(() => {
     setRoutes(routesStatic)
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
@@ -58,7 +49,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
         {mobile ?
           <Box>
             <Toolbar>
-              <IconButton sx={{color: '#fff'}} onClick={() => setDrawer(true)}><TableRowsIcon></TableRowsIcon></IconButton>
+              <IconButton name="mobileHeader" sx={{color: '#fff'}} onClick={() => setDrawer(true)}><TableRowsIcon></TableRowsIcon></IconButton>
             </Toolbar>
             <Drawer
             anchor='left'
@@ -68,6 +59,7 @@ export const Header: React.FC<Header> = ({navigateBio, navigateCareer, navigateP
               <Box sx={{width: 300, mt: 10}}>
               {routes.map((route, key) => 
                 <Button key={key} onClick={() => setNavigateTo(route)}
+                  name={route.name+'Mobile'}
                   sx={{
                     height: 50,
                     borderStyle: 'solid',

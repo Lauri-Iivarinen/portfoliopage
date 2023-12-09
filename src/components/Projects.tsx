@@ -1,12 +1,9 @@
 import { Box, Typography, CircularProgress, useMediaQuery, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
 import React, {useState, useEffect} from "react";
-import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
 import { RenderProjectMedia } from "./RenderProjectMedia";
 import { GetIcon } from "./GetIcon";
-
 
 export const Projects = () => {
 
@@ -150,7 +147,7 @@ export const Projects = () => {
                 >
                     <MenuItem value='all'>All</MenuItem>
                     <MenuItem value='group'>Group</MenuItem>
-                    <MenuItem value='solo'>Solo</MenuItem>
+                    <MenuItem value='solo'>Alone</MenuItem>
                 </Select>
                 </FormControl>
                 <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
@@ -162,10 +159,10 @@ export const Projects = () => {
                 {loading
                     ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><CircularProgress></CircularProgress></Box> 
                     
-                    : <Grid container spacing={2} columnSpacing={2}>{data.map((project, index) =>
+                    : <Grid container spacing={mobile? 0: 2} columnSpacing={2}>{data.map((project, index) =>
                         <Box key={index}>
                             {index !== 0 && <Box sx={{ height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)' }}></Box>}
-                            <Box sx={{ padding: 2, margin: 1, width: '100%', borderWidth: 1 }}>
+                            <Box sx={{ padding: mobile? 1: 2, margin: 1, width: '100%', borderWidth: 1 }}>
                                 <Grid container={true} spacing={1}>
                                     <Grid xs={mobile? 12: 6}>
                                         <RenderProjectMedia img={project.img}></RenderProjectMedia>
@@ -177,8 +174,8 @@ export const Projects = () => {
                                             component="a"
                                             href={project.link}
                                         >GitHub</Typography>
-                                        <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>School project: {project.school ? <CheckBoxIcon sx={{ ml: 1, color: 'green' }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1 }} />}</Typography>
-                                        <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group project: {project.group ? <CheckBoxIcon sx={{ color: 'green', ml: 1.5 }} /> : <IndeterminateCheckBoxIcon sx={{ color: 'red', ml: 1.5 }} />}</Typography>
+                                        <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>Project type: <GetIcon iconName={project.school ? 'School' : 'Personal'}/></Typography>
+                                        <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group type: <GetIcon iconName={project.school ? 'Group' : 'Alone'}/></Typography>
                                         <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
                                         <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>Technologies used:
                                         </Typography>
