@@ -19,18 +19,19 @@ export const WorkExperience = () => {
     const mobile = useMediaQuery('(max-width:1169px)')
     const mobileDialog = useMediaQuery('(max-width:600px)')
 
-    const fetchWorkData = async () => {
-        try {
-            const response = await fetch(`${backend}/api/career`)
-            const result = await response.json()
-            setWork(result)
-            setLoading(false)
-        } catch (error) {
-            console.log(error)
+    useEffect(() => { 
+        const fetchWorkData = async () => {
+            try {
+                const response = await fetch(`${backend}/api/career`)
+                const result = await response.json()
+                setWork(result)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-
-    useEffect(() => { fetchWorkData() }, [])
+        fetchWorkData() 
+    }, [])
 
     const handleOpen = (work: Work) => {
         setActiveWork(work)

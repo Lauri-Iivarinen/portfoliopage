@@ -24,14 +24,6 @@ export const Homepage = () => {
         })
     }
 
-    const mobileStyle = {
-        
-    }
-
-    const defaultStyle = {
-
-    }
-    
     const navigateCareer = () => {
           const pos = careerRef.current.getBoundingClientRect().top
           const location = pos + window.scrollY - headerOffset

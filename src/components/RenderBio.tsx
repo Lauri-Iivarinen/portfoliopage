@@ -12,19 +12,20 @@ export const RenderBio = () => {
     const [loading, setLoading] = useState(true)
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
 
-    const fetchStackPref = async () => {
-        try {
-            const res = await fetch(`${backend}/api/stack`)
-            const result = await res.json()
-            setIcons(result)
-            setLoading(false)
-        } catch (error) {
-            console.log(error)
+    useEffect(() => {
+        const fetchStackPref = async () => {
+            try {
+                const res = await fetch(`${backend}/api/stack`)
+                const result = await res.json()
+                setIcons(result)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+            }
+            
         }
-        
-    }
-
-    useEffect(() => {fetchStackPref()}, [])
+        fetchStackPref()
+    }, [])
 
     return(
         <Grid container={true} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
