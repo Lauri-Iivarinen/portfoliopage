@@ -17,21 +17,19 @@ export const Projects = () => {
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
     const mobile = useMediaQuery('(max-width:900px)')
 
-    const fetchProjects = async () => {
-        try {
-            const response = await fetch(`${backend}/api/projects`)
-            const result = await response.json()
-            setData(result)
-            setStableData(result)
-            setLoading(false)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await fetch(`${backend}/api/projects`)
+                const result = await response.json()
+                setData(result)
+                setStableData(result)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+            }
+        }
         fetchProjects()
-        // eslint-disable-next-line
     }, [])
 
     const handleFilterChange = (event: any) => {

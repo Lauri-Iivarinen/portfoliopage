@@ -1,4 +1,4 @@
-import { Box, MobileStepper, Button } from "@mui/material";
+import { Box, MobileStepper, Button, useMediaQuery } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
 import { Carousel } from "react-configurable-carousel";
 
@@ -11,10 +11,16 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     const [images, setImages] = useState<any[]>([])
     const maxSteps = img.length;
     const containerRef = useRef<any>(null);
+    const mobile = useMediaQuery('(max-width:900px)')
     
     useEffect(() => {
         setImages(img)
     }, [img])
+
+    useEffect( () => {
+        containerRef.current.jumpToIndex(0)
+        setStep(0)
+    }, [mobile])
 
     const next = () => {
         setStep((prevStep => prevStep + 1))
@@ -25,7 +31,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
         setStep((prevStep => prevStep - 1))
         containerRef.current.shiftLeft()
     }
-    
+
     return (
         <Box sx={{ mt: 1, width: '100%' }}>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
@@ -61,21 +67,24 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
             </Carousel>
             </Box>
             <MobileStepper
-            steps={maxSteps}
+            steps={mobile ? 0 : maxSteps}
             position="static"
             activeStep={step}
             color="inherit"
             nextButton={
             <Button
-                size="small"
+                size="large"
                 onClick={next}
-                disabled={step === maxSteps - 1}
+                disabled={mobile? false : step === maxSteps - 1}
             >
                 Next
             </Button>
             }
             backButton={
-            <Button size="small" onClick={prev} disabled={step === 0}>
+            <Button 
+                size="large" 
+                onClick={prev} 
+                disabled={mobile? false : step === 0}>
                 Back
             </Button>
             }
