@@ -1,4 +1,4 @@
-import { Box, Typography, CircularProgress, useMediaQuery, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Box, Typography, CircularProgress, useMediaQuery, TextField, Select, MenuItem, FormControl, InputLabel, Button, TablePagination} from "@mui/material";
 import React, {useState, useEffect} from "react";
 import { Project } from "../util/types/Project";
 import Grid from '@mui/material/Unstable_Grid2';
@@ -16,6 +16,9 @@ export const Projects = () => {
     const [loading, setLoading] = useState(true)
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
     const mobile = useMediaQuery('(max-width:900px)')
+    const [rowsPerPage, setRowsPerPage] = useState(3)
+    const [page, setPage] = useState(0)
+    const [paginatedData, setPaginatedData] = useState<Project[]>([])
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -31,6 +34,19 @@ export const Projects = () => {
         }
         fetchProjects()
     }, [])
+
+    useEffect(() => {
+        setPaginatedData(data.slice(page*rowsPerPage, page*rowsPerPage+rowsPerPage))
+    }, [rowsPerPage, page, data])
+
+    const handlePageChange = (e: any, val: number) => {
+        setPage(val)
+    }
+
+    const handleRowsPerPageChange = (e: any) => {
+        setPage(0)
+        setRowsPerPage(e.target.value)
+    }
 
     const handleFilterChange = (event: any) => {
         setFilter(event.target.value);
@@ -54,7 +70,8 @@ export const Projects = () => {
         filterData('', 'all', 'all', 'Name')
     }
 
-    const filterData = (key: string, type=typeFilter, group=groupFilter, textFilter=filter) => {
+    const filterData = (key: string, type = typeFilter, group = groupFilter, textFilter = filter) => {
+        setPage(0)
         setKeyword(key)
         let filteredData: Project[] = []
         switch (textFilter) {
@@ -107,7 +124,7 @@ export const Projects = () => {
         <Box>
             <Typography variant='h3' sx={{mt: 4, mb: 4,textAlign: 'center'}}>Projects</Typography>
             <Box sx={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-                <Grid container={true}>
+                <Grid container={true} sx={{alignItems: 'center', justifyContent:'center'}}>
                 <TextField value={keyword} name='SearchField' onChange={(e) => filterData(e.target.value)} label='Search'></TextField>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel>Search by</InputLabel>
@@ -147,17 +164,27 @@ export const Projects = () => {
                     <MenuItem value='group'>Group</MenuItem>
                     <MenuItem value='solo'>Alone</MenuItem>
                 </Select>
-                </FormControl>
-                <FormControl sx={{justifyContent: 'center', alignItems: 'center', m: 3}}>
-                    <Button onClick={resetFilter}>Reset filters</Button>
+                </FormControl> 
+                    <FormControl sx={{alignItems: 'center', m: 3}}>
+                        <Button onClick={resetFilter}>Reset filters</Button>
                     </FormControl>
                 </Grid>
-                </Box>
-            
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'center'}}>
+            <TablePagination
+                component='div'
+                count={data.length}
+                page={page}
+                onPageChange={handlePageChange}
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={handleRowsPerPageChange}
+                rowsPerPageOptions={[1, 3, 6, 10, 20]}
+            ></TablePagination>
+            </Box>    
                 {loading
                     ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><CircularProgress></CircularProgress></Box> 
                     
-                    : <Grid container spacing={mobile? 0: 2} columnSpacing={2}>{data.map((project, index) =>
+                    : <Grid container spacing={mobile? 0: 2} columnSpacing={2}>{paginatedData.map((project, index) =>
                         <Box key={index}>
                             {index !== 0 && <Box sx={{ height: '1px', width: '100%', backgroundColor: 'rgb(200,200,200)' }}></Box>}
                             <Box sx={{ padding: mobile? 0: 2, margin: 1, width: '100%', borderWidth: 1 }}>

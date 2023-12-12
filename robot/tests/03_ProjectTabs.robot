@@ -7,9 +7,9 @@ Suite Teardown    Close all browsers
 Projects render data and can be searched
     Given User has home page open in browser
     When User navigates to projects page
-    Wait Until Element Is Visible   xpath://*[contains(text(), 'Groupcalendar')]
+    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
     Input text  xpath://input[@name="SearchField"]  recommendations
-    Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Groupcalendar')]
+    Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
     Wait Until Element Is Visible   xpath://*[contains(text(), 'Movie Recommendations')]
 
 Projects can be searched by description
