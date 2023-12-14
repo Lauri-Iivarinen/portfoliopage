@@ -64,6 +64,7 @@ export const WorkExperience = () => {
             contentStyle={{ background: '#16BAC5', color: '#fff', borderWidth: 1, borderStyle:'solid' }}
             contentArrowStyle={{ borderRight: '7px solid  #16BAC5' }}
             date={work.date}
+            dateClassName='workdate'
             iconStyle={{ background: '#16BAC5', color: 'black' }}
             icon={iconPicker(work.icon)}
         >
