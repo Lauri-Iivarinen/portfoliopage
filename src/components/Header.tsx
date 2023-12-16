@@ -15,13 +15,11 @@ export const Header: React.FC<HeaderProps> = ({navigateBio, navigateCareer, navi
   const mobile = useMediaQuery('(max-width:900px)')
 
   const mouseOver = (e: any) => {
-    e.target.style.color = '#fff'
-    //purple: #9442c1
-    //green: #26f500
+    e.target.style.cssText = "color: #fff; border-bottom-color: #fff;"
   }
 
   const mouseOff = (e: any) => {
-    e.target.style.color = 'inherit'
+    e.target.style.cssText = "color: inherit; border-color: #16BAC5;"
   }
 
   const routesStatic: Route[] = [
@@ -84,6 +82,7 @@ export const Header: React.FC<HeaderProps> = ({navigateBio, navigateCareer, navi
             {routes.map((route, key) => 
               <Button key={key} onClick={route.nav}
                 sx={{
+                  height: '100%',
                   mr: 5,
                   ml: 5,
                   display: { xs: 'none', md: 'flex' },
@@ -91,7 +90,9 @@ export const Header: React.FC<HeaderProps> = ({navigateBio, navigateCareer, navi
                   fontSize: 25,
                   color: mobile? 'red': 'inherit',
                   background: 'inherit',
-                  borderStyle: 'none'
+                  borderWidth: 2,
+                  borderStyle: 'solid',
+                  borderColor: '#16BAC5'
                 }}
                 onMouseOver={mouseOver}
                 onMouseOut={mouseOff}

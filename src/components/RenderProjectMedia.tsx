@@ -42,7 +42,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
             dotsNavigationInside={true}
             width={"80%"}
             height={"300px"}
-            carouselStyle={'flat'}
+            carouselStyle={'flat'}        
             >
             {images.map((img, index) => {
                 return (
@@ -85,7 +85,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
                 size="large" 
                 onClick={prev} 
                 disabled={mobile? false : step === 0}>
-                Back
+                Previous
             </Button>
             }
             />            

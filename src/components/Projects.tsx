@@ -120,6 +120,14 @@ export const Projects = () => {
         // eslint-disable-next-line
     }, [filter, stableData])
 
+    const ghLinkHover = (e: any) => {
+        e.target.style.cssText = "background-color: #16BAC5; color: #fff;"
+    }
+
+    const ghLinkLeave = (e: any) => {
+        e.target.style.cssText = "background-color: #fff; color: #16BAC5;"
+    }
+
     return (
         <Box>
             <Typography variant='h3' sx={{mt: 4, mb: 4,textAlign: 'center'}}>Projects</Typography>
@@ -198,6 +206,8 @@ export const Projects = () => {
                                             sx={{ float: 'right', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#16BAC5' }}
                                             component="a"
                                             href={project.link}
+                                            onMouseEnter={ghLinkHover}
+                                            onMouseLeave={ghLinkLeave}
                                         >GitHub</Typography>
                                         <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>Project type: <GetIcon iconName={project.school ? 'School' : 'Personal'}/></Typography>
                                         <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group type: <GetIcon iconName={project.school ? 'Group' : 'Alone'}/></Typography>
