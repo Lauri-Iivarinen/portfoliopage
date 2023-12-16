@@ -7,9 +7,9 @@ Suite Teardown    Close all browsers
 Projects render data and can be searched
     Given User has home page open in browser
     When User navigates to projects page
-    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
+    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat Pump IOT App')]
     Input text  xpath://input[@name="SearchField"]  recommendations
-    Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
+    Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Heat Pump IOT App')]
     Wait Until Element Is Visible   xpath://*[contains(text(), 'Movie Recommendations')]
 
 Projects can be searched by description
@@ -28,7 +28,7 @@ Projects can be searched by technology
     Wait Until Element Is Not Visible    xpath://*[@data-value="Technology"]
     Input text  xpath://input[@name="SearchField"]  docker
     Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Warspear Offline')]
-    Wait Until Element Is Visible   xpath://*[contains(text(), 'Efilibrary')]
+    Wait Until Element Is Visible   xpath://*[contains(text(), 'EfiLibrary')]
 
 Search function can be reset
     Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Warspear Offline')] 
@@ -51,7 +51,7 @@ Projects can be filtered with group type
     Wait Until Element Is Visible   xpath://*[contains(text(), 'Mobile Chess Game')]
     When User sets group filter to solo
     Wait Until Element Is Not Visible   xpath://*[contains(text(), 'Mobile Chess Game')]
-    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat pump IOT app')]
+    Wait Until Element Is Visible   xpath://*[contains(text(), 'Heat Pump IOT App')]
 
 
 

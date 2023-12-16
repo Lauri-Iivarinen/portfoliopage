@@ -14,7 +14,7 @@ User can navigate to bio page
 
 User can navigate to projects page
     When User navigates to projects page
-    Wait Until Element Is Visible    xpath://*[contains(text(), 'Efilibrary')]
+    Wait Until Element Is Visible    xpath://*[contains(text(), 'EfiLibrary')]
 
 
 *** Keywords ***

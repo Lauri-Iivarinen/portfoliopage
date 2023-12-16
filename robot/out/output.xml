@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.11.5 on linux)" generated="20231212 19:40:11.001" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1 (Python 3.11.5 on linux)" generated="20231216 17:56:40.701" rpa="false" schemaversion="4">
 <suite id="s1" name="Tests" source="/opt/robotframework/tests">
 <suite id="s1-s1" name="00 SmokeTest" source="/opt/robotframework/tests/00_SmokeTest.robot">
 <test id="s1-s1-t1" name="Browser opens inside docker" line="7">
@@ -9,29 +9,29 @@
 <arg>browser=${BROWSER}</arg>
 <arg>options=add_argument("--no-sandbox")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231212 19:40:11.169" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
-<status status="PASS" starttime="20231212 19:40:11.168" endtime="20231212 19:40:12.682"/>
+<msg timestamp="20231216 17:56:41.050" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
+<status status="PASS" starttime="20231216 17:56:41.049" endtime="20231216 17:56:43.521"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1920</arg>
 <arg>1080</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20231212 19:40:12.683" endtime="20231212 19:40:12.899"/>
+<status status="PASS" starttime="20231216 17:56:43.521" endtime="20231216 17:56:43.853"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:11.168" endtime="20231212 19:40:12.899"/>
+<status status="PASS" starttime="20231216 17:56:41.048" endtime="20231216 17:56:43.854"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), "My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for an internship.")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:12.899" endtime="20231212 19:40:13.285"/>
+<status status="PASS" starttime="20231216 17:56:43.854" endtime="20231216 17:56:44.840"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:11.167" endtime="20231212 19:40:13.285"/>
+<status status="PASS" starttime="20231216 17:56:41.047" endtime="20231216 17:56:44.840"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20231212 19:40:13.286" endtime="20231212 19:40:13.351"/>
+<status status="PASS" starttime="20231216 17:56:44.845" endtime="20231216 17:56:44.936"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:11.025" endtime="20231212 19:40:13.352"/>
+<status status="PASS" starttime="20231216 17:56:40.722" endtime="20231216 17:56:44.936"/>
 </suite>
 <suite id="s1-s2" name="01 HeaderTest" source="/opt/robotframework/tests/01_HeaderTest.robot">
 <test id="s1-s2-t1" name="User can navigate to work experience page" line="6">
@@ -41,132 +41,131 @@
 <arg>browser=${BROWSER}</arg>
 <arg>options=add_argument("--no-sandbox")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231212 19:40:13.363" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
-<status status="PASS" starttime="20231212 19:40:13.362" endtime="20231212 19:40:14.812"/>
+<msg timestamp="20231216 17:56:44.956" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
+<status status="PASS" starttime="20231216 17:56:44.954" endtime="20231216 17:56:47.353"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1920</arg>
 <arg>1080</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20231212 19:40:14.812" endtime="20231212 19:40:15.020"/>
+<status status="PASS" starttime="20231216 17:56:47.353" endtime="20231216 17:56:47.769"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:13.360" endtime="20231212 19:40:15.020"/>
+<status status="PASS" starttime="20231216 17:56:44.953" endtime="20231216 17:56:47.769"/>
 </kw>
 <kw name="When User navigates to work page">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[1]/header/div/button[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:15.021" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[2]'.</msg>
-<status status="PASS" starttime="20231212 19:40:15.021" endtime="20231212 19:40:15.457"/>
+<msg timestamp="20231216 17:56:47.770" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[2]'.</msg>
+<status status="PASS" starttime="20231216 17:56:47.770" endtime="20231216 17:56:48.483"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.457" endtime="20231212 19:40:15.521"/>
+<status status="PASS" starttime="20231216 17:56:48.486" endtime="20231216 17:56:48.647"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:15.020" endtime="20231212 19:40:15.521"/>
+<status status="PASS" starttime="20231216 17:56:47.769" endtime="20231216 17:56:48.647"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Gymnastics instructor')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.521" endtime="20231212 19:40:15.577"/>
+<status status="PASS" starttime="20231216 17:56:48.648" endtime="20231216 17:56:48.761"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:13.358" endtime="20231212 19:40:15.577"/>
+<status status="PASS" starttime="20231216 17:56:44.950" endtime="20231216 17:56:48.761"/>
 </test>
 <test id="s1-s2-t2" name="User can navigate to bio page" line="11">
 <kw name="When User navigates to bio page">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[1]/header/div/button[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:15.580" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[1]'.</msg>
-<status status="PASS" starttime="20231212 19:40:15.579" endtime="20231212 19:40:15.711"/>
+<msg timestamp="20231216 17:56:48.763" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[1]'.</msg>
+<status status="PASS" starttime="20231216 17:56:48.763" endtime="20231216 17:56:48.870"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.711" endtime="20231212 19:40:15.767"/>
+<status status="PASS" starttime="20231216 17:56:48.870" endtime="20231216 17:56:48.906"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:15.579" endtime="20231212 19:40:15.767"/>
+<status status="PASS" starttime="20231216 17:56:48.762" endtime="20231216 17:56:48.907"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), "My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for an internship.")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.767" endtime="20231212 19:40:15.807"/>
+<status status="PASS" starttime="20231216 17:56:48.907" endtime="20231216 17:56:48.946"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:15.578" endtime="20231212 19:40:15.807"/>
+<status status="PASS" starttime="20231216 17:56:48.762" endtime="20231216 17:56:48.946"/>
 </test>
 <test id="s1-s2-t3" name="User can navigate to projects page" line="15">
 <kw name="When User navigates to projects page" library="keywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[1]/header/div/button[3]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:15.809" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[3]'.</msg>
-<status status="PASS" starttime="20231212 19:40:15.809" endtime="20231212 19:40:15.888"/>
+<msg timestamp="20231216 17:56:48.948" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[3]'.</msg>
+<status status="PASS" starttime="20231216 17:56:48.948" endtime="20231216 17:56:49.085"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.889" endtime="20231212 19:40:15.928"/>
+<status status="PASS" starttime="20231216 17:56:49.085" endtime="20231216 17:56:49.116"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:15.809" endtime="20231212 19:40:15.928"/>
+<status status="PASS" starttime="20231216 17:56:48.947" endtime="20231216 17:56:49.116"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[contains(text(), 'Efilibrary')]</arg>
+<arg>xpath://*[contains(text(), 'EfiLibrary')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:15.928" endtime="20231212 19:40:15.967"/>
+<status status="PASS" starttime="20231216 17:56:49.117" endtime="20231216 17:56:49.173"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:15.808" endtime="20231212 19:40:15.967"/>
+<status status="PASS" starttime="20231216 17:56:48.947" endtime="20231216 17:56:49.173"/>
 </test>
-<status status="PASS" starttime="20231212 19:40:13.353" endtime="20231212 19:40:15.968"/>
+<status status="PASS" starttime="20231216 17:56:44.939" endtime="20231216 17:56:49.174"/>
 </suite>
 <suite id="s1-s3" name="02 ContactComponentTest" source="/opt/robotframework/tests/02_ContactComponentTest.robot">
 <test id="s1-s3-t1" name="Contact component works as intended" line="7">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[1]/header/div/button[5]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:15.975" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[5]'.</msg>
-<status status="PASS" starttime="20231212 19:40:15.973" endtime="20231212 19:40:16.088"/>
+<msg timestamp="20231216 17:56:49.186" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[5]'.</msg>
+<status status="PASS" starttime="20231216 17:56:49.183" endtime="20231216 17:56:49.525"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Name:')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:16.088" endtime="20231212 19:40:16.121"/>
+<status status="PASS" starttime="20231216 17:56:49.525" endtime="20231216 17:56:49.609"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'contact:')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:16.122" endtime="20231212 19:40:16.139"/>
+<status status="PASS" starttime="20231216 17:56:49.609" endtime="20231216 17:56:49.648"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]/div[6]/div/div/div[2]/button[2]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:16.141" level="INFO">Clicking button 'xpath://*[@id="root"]/div/div[2]/div[6]/div/div/div[2]/button[2]'.</msg>
-<status status="PASS" starttime="20231212 19:40:16.139" endtime="20231212 19:40:16.314"/>
+<msg timestamp="20231216 17:56:49.666" level="INFO">Clicking button 'xpath://*[@id="root"]/div/div[2]/div[6]/div/div/div[2]/button[2]'.</msg>
+<status status="PASS" starttime="20231216 17:56:49.648" endtime="20231216 17:56:49.984"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'contact: ')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20231212 19:40:21.506" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20231212 19:40:21.506" level="FAIL">Element 'xpath://*[contains(text(), 'contact: ')]' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20231212 19:40:16.314" endtime="20231212 19:40:21.508"/>
+<status status="PASS" starttime="20231216 17:56:49.984" endtime="20231216 17:56:50.531"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]/div[6]/div/div/div[2]/button[1]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20231212 19:40:21.508" endtime="20231212 19:40:21.508"/>
+<msg timestamp="20231216 17:56:50.532" level="INFO">Clicking button 'xpath://*[@id="root"]/div/div[2]/div[6]/div/div/div[2]/button[1]'.</msg>
+<status status="PASS" starttime="20231216 17:56:50.531" endtime="20231216 17:56:50.660"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'contact: ')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="NOT RUN" starttime="20231212 19:40:21.508" endtime="20231212 19:40:21.508"/>
+<status status="PASS" starttime="20231216 17:56:50.661" endtime="20231216 17:56:50.684"/>
 </kw>
-<status status="FAIL" starttime="20231212 19:40:15.972" endtime="20231212 19:40:21.508">Element 'xpath://*[contains(text(), 'contact: ')]' not visible after 5 seconds.</status>
+<status status="PASS" starttime="20231216 17:56:49.182" endtime="20231216 17:56:50.684"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20231212 19:40:21.509" endtime="20231212 19:40:21.586"/>
+<status status="PASS" starttime="20231216 17:56:50.685" endtime="20231216 17:56:50.759"/>
 </kw>
-<status status="FAIL" starttime="20231212 19:40:15.969" endtime="20231212 19:40:21.586"/>
+<status status="PASS" starttime="20231216 17:56:49.176" endtime="20231216 17:56:50.760"/>
 </suite>
 <suite id="s1-s4" name="03 ProjectTabs" source="/opt/robotframework/tests/03_ProjectTabs.robot">
 <test id="s1-s4-t1" name="Projects render data and can be searched" line="7">
@@ -176,327 +175,328 @@
 <arg>browser=${BROWSER}</arg>
 <arg>options=add_argument("--no-sandbox")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231212 19:40:21.597" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
-<status status="PASS" starttime="20231212 19:40:21.596" endtime="20231212 19:40:23.322"/>
+<msg timestamp="20231216 17:56:50.776" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
+<status status="PASS" starttime="20231216 17:56:50.774" endtime="20231216 17:56:53.195"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1920</arg>
 <arg>1080</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20231212 19:40:23.323" endtime="20231212 19:40:23.543"/>
+<status status="PASS" starttime="20231216 17:56:53.196" endtime="20231216 17:56:53.529"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:21.595" endtime="20231212 19:40:23.543"/>
+<status status="PASS" starttime="20231216 17:56:50.773" endtime="20231216 17:56:53.529"/>
 </kw>
 <kw name="When User navigates to projects page" library="keywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[1]/header/div/button[3]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:23.544" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[3]'.</msg>
-<status status="PASS" starttime="20231212 19:40:23.544" endtime="20231212 19:40:24.041"/>
+<msg timestamp="20231216 17:56:53.530" level="INFO">Clicking element 'xpath://*[@id="root"]/div/div[1]/header/div/button[3]'.</msg>
+<status status="PASS" starttime="20231216 17:56:53.530" endtime="20231216 17:56:54.263"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="root"]/div/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:24.041" endtime="20231212 19:40:24.125"/>
+<status status="PASS" starttime="20231216 17:56:54.263" endtime="20231216 17:56:54.436"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:23.543" endtime="20231212 19:40:24.125"/>
+<status status="PASS" starttime="20231216 17:56:53.530" endtime="20231216 17:56:54.436"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[contains(text(), 'Heat pump IOT app')]</arg>
+<arg>xpath://*[contains(text(), 'Heat Pump IOT App')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:24.125" endtime="20231212 19:40:24.179"/>
+<status status="PASS" starttime="20231216 17:56:54.436" endtime="20231216 17:56:54.576"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath://input[@name="SearchField"]</arg>
 <arg>recommendations</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:24.181" level="INFO">Typing text 'recommendations' into text field 'xpath://input[@name="SearchField"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:24.179" endtime="20231212 19:40:25.108"/>
+<msg timestamp="20231216 17:56:54.577" level="INFO">Typing text 'recommendations' into text field 'xpath://input[@name="SearchField"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:54.576" endtime="20231216 17:56:55.449"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
-<arg>xpath://*[contains(text(), 'Heat pump IOT app')]</arg>
+<arg>xpath://*[contains(text(), 'Heat Pump IOT App')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.108" endtime="20231212 19:40:25.174"/>
+<status status="PASS" starttime="20231216 17:56:55.449" endtime="20231216 17:56:55.492"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Movie Recommendations')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.175" endtime="20231212 19:40:25.209"/>
+<status status="PASS" starttime="20231216 17:56:55.493" endtime="20231216 17:56:55.548"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:21.594" endtime="20231212 19:40:25.209"/>
+<status status="PASS" starttime="20231216 17:56:50.772" endtime="20231216 17:56:55.549"/>
 </test>
 <test id="s1-s4-t2" name="Projects can be searched by description" line="15">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-SearchBy"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:25.211" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-SearchBy"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:25.210" endtime="20231212 19:40:25.346"/>
+<msg timestamp="20231216 17:56:55.551" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-SearchBy"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:55.550" endtime="20231216 17:56:55.779"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Description"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.347" endtime="20231212 19:40:25.393"/>
+<status status="PASS" starttime="20231216 17:56:55.779" endtime="20231216 17:56:55.862"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Description"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:25.394" level="INFO">Clicking element 'xpath://*[@data-value="Description"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:25.393" endtime="20231212 19:40:25.530"/>
+<msg timestamp="20231216 17:56:55.863" level="INFO">Clicking element 'xpath://*[@data-value="Description"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:55.862" endtime="20231216 17:56:56.134"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Description"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.530" endtime="20231212 19:40:25.648"/>
+<msg timestamp="20231216 17:56:56.340" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20231216 17:56:56.134" endtime="20231216 17:56:56.552"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath://input[@name="SearchField"]</arg>
 <arg>a fun</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:25.649" level="INFO">Typing text 'a fun' into text field 'xpath://input[@name="SearchField"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:25.648" endtime="20231212 19:40:25.961"/>
+<msg timestamp="20231216 17:56:56.552" level="INFO">Typing text 'a fun' into text field 'xpath://input[@name="SearchField"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:56.552" endtime="20231216 17:56:56.978"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Movie Recommendations')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.961" endtime="20231212 19:40:25.986"/>
+<status status="PASS" starttime="20231216 17:56:56.978" endtime="20231216 17:56:57.030"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:25.986" endtime="20231212 19:40:26.025"/>
+<status status="PASS" starttime="20231216 17:56:57.030" endtime="20231216 17:56:57.087"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:25.209" endtime="20231212 19:40:26.025"/>
+<status status="PASS" starttime="20231216 17:56:55.549" endtime="20231216 17:56:57.087"/>
 </test>
 <test id="s1-s4-t3" name="Projects can be searched by technology" line="24">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-SearchBy"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:26.027" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-SearchBy"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:26.026" endtime="20231212 19:40:26.134"/>
+<msg timestamp="20231216 17:56:57.089" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-SearchBy"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:57.088" endtime="20231216 17:56:57.231"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Technology"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.134" endtime="20231212 19:40:26.173"/>
+<status status="PASS" starttime="20231216 17:56:57.231" endtime="20231216 17:56:57.312"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Technology"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:26.174" level="INFO">Clicking element 'xpath://*[@data-value="Technology"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:26.173" endtime="20231212 19:40:26.314"/>
+<msg timestamp="20231216 17:56:57.313" level="INFO">Clicking element 'xpath://*[@data-value="Technology"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:57.312" endtime="20231216 17:56:57.484"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="Technology"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.314" endtime="20231212 19:40:26.427"/>
+<status status="PASS" starttime="20231216 17:56:57.484" endtime="20231216 17:56:57.666"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath://input[@name="SearchField"]</arg>
 <arg>docker</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:26.427" level="INFO">Typing text 'docker' into text field 'xpath://input[@name="SearchField"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:26.427" endtime="20231212 19:40:26.736"/>
+<msg timestamp="20231216 17:56:57.667" level="INFO">Typing text 'docker' into text field 'xpath://input[@name="SearchField"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:57.667" endtime="20231216 17:56:58.002"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.736" endtime="20231212 19:40:26.752"/>
+<status status="PASS" starttime="20231216 17:56:58.002" endtime="20231216 17:56:58.030"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[contains(text(), 'Efilibrary')]</arg>
+<arg>xpath://*[contains(text(), 'EfiLibrary')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.752" endtime="20231212 19:40:26.793"/>
+<status status="PASS" starttime="20231216 17:56:58.030" endtime="20231216 17:56:58.069"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:26.026" endtime="20231212 19:40:26.793"/>
+<status status="PASS" starttime="20231216 17:56:57.087" endtime="20231216 17:56:58.069"/>
 </test>
 <test id="s1-s4-t4" name="Search function can be reset" line="33">
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.794" endtime="20231212 19:40:26.812"/>
+<status status="PASS" starttime="20231216 17:56:58.070" endtime="20231216 17:56:58.087"/>
 </kw>
 <kw name="When User resets search functions">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://button[contains(text(), 'Reset filters')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:26.813" level="INFO">Clicking button 'xpath://button[contains(text(), 'Reset filters')]'.</msg>
-<status status="PASS" starttime="20231212 19:40:26.812" endtime="20231212 19:40:26.987"/>
+<msg timestamp="20231216 17:56:58.088" level="INFO">Clicking button 'xpath://button[contains(text(), 'Reset filters')]'.</msg>
+<status status="PASS" starttime="20231216 17:56:58.087" endtime="20231216 17:56:58.270"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:26.987" endtime="20231212 19:40:27.051"/>
+<status status="PASS" starttime="20231216 17:56:58.270" endtime="20231216 17:56:58.343"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:26.812" endtime="20231212 19:40:27.051"/>
+<status status="PASS" starttime="20231216 17:56:58.087" endtime="20231216 17:56:58.343"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.051" endtime="20231212 19:40:27.083"/>
+<status status="PASS" starttime="20231216 17:56:58.343" endtime="20231216 17:56:58.377"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:26.793" endtime="20231212 19:40:27.083"/>
+<status status="PASS" starttime="20231216 17:56:58.070" endtime="20231216 17:56:58.377"/>
 </test>
 <test id="s1-s4-t5" name="Projects can be filtered with type" line="38">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.084" endtime="20231212 19:40:27.123"/>
+<status status="PASS" starttime="20231216 17:56:58.379" endtime="20231216 17:56:58.412"/>
 </kw>
 <kw name="When User sets type filter to personal">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-FilterByType"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:27.124" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByType"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:27.123" endtime="20231212 19:40:27.214"/>
+<msg timestamp="20231216 17:56:58.413" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByType"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:58.413" endtime="20231216 17:56:58.506"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="personal"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.214" endtime="20231212 19:40:27.250"/>
+<status status="PASS" starttime="20231216 17:56:58.506" endtime="20231216 17:56:58.548"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="personal"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:27.250" level="INFO">Clicking element 'xpath://*[@data-value="personal"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:27.250" endtime="20231212 19:40:27.398"/>
+<msg timestamp="20231216 17:56:58.548" level="INFO">Clicking element 'xpath://*[@data-value="personal"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:58.548" endtime="20231216 17:56:58.712"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="personal"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.398" endtime="20231212 19:40:27.682"/>
+<status status="PASS" starttime="20231216 17:56:58.712" endtime="20231216 17:56:59.024"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:27.123" endtime="20231212 19:40:27.682"/>
+<status status="PASS" starttime="20231216 17:56:58.413" endtime="20231216 17:56:59.025"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.682" endtime="20231212 19:40:27.692"/>
+<status status="PASS" starttime="20231216 17:56:59.025" endtime="20231216 17:56:59.038"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Discord Bot')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.692" endtime="20231212 19:40:27.732"/>
+<status status="PASS" starttime="20231216 17:56:59.038" endtime="20231216 17:56:59.072"/>
 </kw>
 <kw name="When User sets type filter to school">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-FilterByType"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:27.733" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByType"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:27.732" endtime="20231212 19:40:27.815"/>
+<msg timestamp="20231216 17:56:59.072" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByType"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:59.072" endtime="20231216 17:56:59.154"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="school"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.815" endtime="20231212 19:40:27.850"/>
+<status status="PASS" starttime="20231216 17:56:59.155" endtime="20231216 17:56:59.192"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="school"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:27.850" level="INFO">Clicking element 'xpath://*[@data-value="school"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:27.850" endtime="20231212 19:40:27.998"/>
+<msg timestamp="20231216 17:56:59.193" level="INFO">Clicking element 'xpath://*[@data-value="school"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:59.192" endtime="20231216 17:56:59.348"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="school"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:27.998" endtime="20231212 19:40:28.279"/>
+<status status="PASS" starttime="20231216 17:56:59.348" endtime="20231216 17:56:59.635"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:27.732" endtime="20231212 19:40:28.279"/>
+<status status="PASS" starttime="20231216 17:56:59.072" endtime="20231216 17:56:59.635"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Discord Bot')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.279" endtime="20231212 19:40:28.290"/>
+<status status="PASS" starttime="20231216 17:56:59.635" endtime="20231216 17:56:59.647"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.291" endtime="20231212 19:40:28.316"/>
+<status status="PASS" starttime="20231216 17:56:59.648" endtime="20231216 17:56:59.677"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:27.083" endtime="20231212 19:40:28.316"/>
+<status status="PASS" starttime="20231216 17:56:58.378" endtime="20231216 17:56:59.677"/>
 </test>
 <test id="s1-s4-t6" name="Projects can be filtered with group type" line="47">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.322" endtime="20231212 19:40:28.354"/>
+<status status="PASS" starttime="20231216 17:56:59.678" endtime="20231216 17:56:59.710"/>
 </kw>
 <kw name="When User sets group filter to group">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-FilterByGroup"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:28.355" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByGroup"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:28.354" endtime="20231212 19:40:28.451"/>
+<msg timestamp="20231216 17:56:59.711" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByGroup"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:59.710" endtime="20231216 17:56:59.812"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="group"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.451" endtime="20231212 19:40:28.492"/>
+<status status="PASS" starttime="20231216 17:56:59.812" endtime="20231216 17:56:59.848"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="group"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:28.492" level="INFO">Clicking element 'xpath://*[@data-value="group"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:28.492" endtime="20231212 19:40:28.634"/>
+<msg timestamp="20231216 17:56:59.849" level="INFO">Clicking element 'xpath://*[@data-value="group"]'.</msg>
+<status status="PASS" starttime="20231216 17:56:59.848" endtime="20231216 17:56:59.982"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="group"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.634" endtime="20231212 19:40:28.917"/>
+<status status="PASS" starttime="20231216 17:56:59.982" endtime="20231216 17:57:00.267"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:28.354" endtime="20231212 19:40:28.918"/>
+<status status="PASS" starttime="20231216 17:56:59.710" endtime="20231216 17:57:00.267"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Warspear Offline')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.918" endtime="20231212 19:40:28.931"/>
+<status status="PASS" starttime="20231216 17:57:00.267" endtime="20231216 17:57:00.280"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Mobile Chess Game')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:28.931" endtime="20231212 19:40:28.964"/>
+<status status="PASS" starttime="20231216 17:57:00.280" endtime="20231216 17:57:00.312"/>
 </kw>
 <kw name="When User sets group filter to solo">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="mui-component-select-FilterByGroup"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:28.966" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByGroup"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:28.965" endtime="20231212 19:40:29.060"/>
+<msg timestamp="20231216 17:57:00.313" level="INFO">Clicking element 'xpath://*[@id="mui-component-select-FilterByGroup"]'.</msg>
+<status status="PASS" starttime="20231216 17:57:00.313" endtime="20231216 17:57:00.394"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="solo"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:29.060" endtime="20231212 19:40:29.093"/>
+<status status="PASS" starttime="20231216 17:57:00.395" endtime="20231216 17:57:00.429"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="solo"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:29.094" level="INFO">Clicking element 'xpath://*[@data-value="solo"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:29.093" endtime="20231212 19:40:29.236"/>
+<msg timestamp="20231216 17:57:00.430" level="INFO">Clicking element 'xpath://*[@data-value="solo"]'.</msg>
+<status status="PASS" starttime="20231216 17:57:00.429" endtime="20231216 17:57:00.578"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[@data-value="solo"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:29.237" endtime="20231212 19:40:29.527"/>
+<status status="PASS" starttime="20231216 17:57:00.578" endtime="20231216 17:57:00.867"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:28.965" endtime="20231212 19:40:29.528"/>
+<status status="PASS" starttime="20231216 17:57:00.312" endtime="20231216 17:57:00.867"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://*[contains(text(), 'Mobile Chess Game')]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:29.528" endtime="20231212 19:40:29.540"/>
+<status status="PASS" starttime="20231216 17:57:00.867" endtime="20231216 17:57:00.882"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[contains(text(), 'Heat pump IOT app')]</arg>
+<arg>xpath://*[contains(text(), 'Heat Pump IOT App')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:29.540" endtime="20231212 19:40:29.567"/>
+<status status="PASS" starttime="20231216 17:57:00.882" endtime="20231216 17:57:00.908"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:28.321" endtime="20231212 19:40:29.567"/>
+<status status="PASS" starttime="20231216 17:56:59.677" endtime="20231216 17:57:00.908"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20231212 19:40:29.568" endtime="20231212 19:40:29.630"/>
+<status status="PASS" starttime="20231216 17:57:00.909" endtime="20231216 17:57:00.983"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:21.588" endtime="20231212 19:40:29.630"/>
+<status status="PASS" starttime="20231216 17:56:50.763" endtime="20231216 17:57:00.983"/>
 </suite>
 <suite id="s1-s5" name="04 MobileSize" source="/opt/robotframework/tests/04_MobileSize.robot">
 <test id="s1-s5-t1" name="Display size defines mobile view" line="7">
@@ -506,78 +506,78 @@
 <arg>browser=${BROWSER}</arg>
 <arg>options=add_argument("--no-sandbox")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231212 19:40:29.639" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
-<status status="PASS" starttime="20231212 19:40:29.638" endtime="20231212 19:40:31.073"/>
+<msg timestamp="20231216 17:57:00.991" level="INFO">Opening browser 'headlesschrome' to base url 'http://172.17.0.1:3000'.</msg>
+<status status="PASS" starttime="20231216 17:57:00.990" endtime="20231216 17:57:02.445"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>1920</arg>
 <arg>1080</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20231212 19:40:31.074" endtime="20231212 19:40:31.308"/>
+<status status="PASS" starttime="20231216 17:57:02.445" endtime="20231216 17:57:02.652"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:29.637" endtime="20231212 19:40:31.308"/>
+<status status="PASS" starttime="20231216 17:57:00.989" endtime="20231216 17:57:02.652"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://button[@name="mobileHeader"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:31.308" endtime="20231212 19:40:31.579"/>
+<status status="PASS" starttime="20231216 17:57:02.652" endtime="20231216 17:57:02.797"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>430</arg>
 <arg>670</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20231212 19:40:31.579" endtime="20231212 19:40:31.764"/>
+<status status="PASS" starttime="20231216 17:57:02.797" endtime="20231216 17:57:02.933"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://button[@name="mobileHeader"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:31.764" endtime="20231212 19:40:31.801"/>
+<status status="PASS" starttime="20231216 17:57:02.933" endtime="20231216 17:57:03.199"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:29.636" endtime="20231212 19:40:31.801"/>
+<status status="PASS" starttime="20231216 17:57:00.987" endtime="20231216 17:57:03.200"/>
 </test>
 <test id="s1-s5-t2" name="Header button opens menu" line="13">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://button[@name="mobileHeader"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:31.804" endtime="20231212 19:40:31.851"/>
+<status status="PASS" starttime="20231216 17:57:03.206" endtime="20231216 17:57:03.271"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>xpath://button[@name="BIOMobile"]</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20231212 19:40:31.851" endtime="20231212 19:40:31.876"/>
+<status status="PASS" starttime="20231216 17:57:03.271" endtime="20231216 17:57:03.287"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://button[@name="mobileHeader"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231212 19:40:31.878" level="INFO">Clicking button 'xpath://button[@name="mobileHeader"]'.</msg>
-<status status="PASS" starttime="20231212 19:40:31.877" endtime="20231212 19:40:32.095"/>
+<msg timestamp="20231216 17:57:03.287" level="INFO">Clicking button 'xpath://button[@name="mobileHeader"]'.</msg>
+<status status="PASS" starttime="20231216 17:57:03.287" endtime="20231216 17:57:03.501"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://button[@name="BIOMobile"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231212 19:40:32.095" endtime="20231212 19:40:32.377"/>
+<status status="PASS" starttime="20231216 17:57:03.502" endtime="20231216 17:57:03.557"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:31.802" endtime="20231212 19:40:32.377"/>
+<status status="PASS" starttime="20231216 17:57:03.203" endtime="20231216 17:57:03.557"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20231212 19:40:32.378" endtime="20231212 19:40:32.445"/>
+<status status="PASS" starttime="20231216 17:57:03.559" endtime="20231216 17:57:03.625"/>
 </kw>
-<status status="PASS" starttime="20231212 19:40:29.632" endtime="20231212 19:40:32.445"/>
+<status status="PASS" starttime="20231216 17:57:00.984" endtime="20231216 17:57:03.625"/>
 </suite>
-<status status="FAIL" starttime="20231212 19:40:11.002" endtime="20231212 19:40:32.451"/>
+<status status="PASS" starttime="20231216 17:56:40.702" endtime="20231216 17:57:03.629"/>
 </suite>
 <statistics>
 <total>
-<stat pass="12" fail="1" skip="0">All Tests</stat>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="12" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="13" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="00 SmokeTest">Tests.00 SmokeTest</stat>
 <stat pass="3" fail="0" skip="0" id="s1-s2" name="01 HeaderTest">Tests.01 HeaderTest</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s3" name="02 ContactComponentTest">Tests.02 ContactComponentTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="02 ContactComponentTest">Tests.02 ContactComponentTest</stat>
 <stat pass="6" fail="0" skip="0" id="s1-s4" name="03 ProjectTabs">Tests.03 ProjectTabs</stat>
 <stat pass="2" fail="0" skip="0" id="s1-s5" name="04 MobileSize">Tests.04 MobileSize</stat>
 </suite>
