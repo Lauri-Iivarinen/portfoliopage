@@ -69,36 +69,48 @@ export const WorkExperience = () => {
             icon={iconPicker(work.icon)}
         >
             {mobile && <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>}
-            <Typography variant='h4' className="vertical-timeline-element-title">{work.workTitle}</Typography>
-            <Typography variant='h5' className="vertical-timeline-element-title">{work.location}</Typography>
-            <Typography>{work.smallDescription}</Typography>
+            <Typography variant='h4' className="vertical-timeline-element-title">
+                {work.workTitle}
+            </Typography>
+            <Typography variant='h5' className="vertical-timeline-element-title">
+                {work.location}
+            </Typography>
+            <Typography>
+                {work.smallDescription}
+            </Typography>
             {!mobile && <Button variant='outlined' color='inherit' sx={{marginTop: 2}} onClick={() => handleOpen(work)}>More details</Button>}
         </VerticalTimelineElement>
 
     return (
         <Box>
             <Typography sx={{textAlign: 'center'}} variant='h3'>Career</Typography>
-
-                {!loading ? <VerticalTimeline
+            {!loading
+                ? <VerticalTimeline
                     lineColor='#16BAC5'
-                >{work.map((row, index) => {
-                    return timelineElement(row, index)
-                })}</VerticalTimeline>: <Box  sx={{ display:'flex', justifyContent: 'center', alignItems: 'center'}}><CircularProgress></CircularProgress></Box>}
-
-                <Dialog open={toggleModal} onClose={handleClose}>
-                    <Box sx={{padding: mobileDialog? 1:5, borderWidth: 2, borderColor: 'black', borderStyle: 'solid'}}>
-                        <Typography variant='h6' sx={{marginBottom: 2}}>{ activeWork?.workTitle }</Typography>
-                        <Typography>
-                            {activeWork?.description}
-                        </Typography>
-                        <Grid container={true} spacing={1} sx={{mt: 3}}>
-                            {activeWork?.img.map((i, index) => 
-                                <Grid key={index} xs={6}>
-                                    <RenderImage imgName={i}></RenderImage>
-                                </Grid>)}
-                        </Grid>
-                    </Box>
-                </Dialog>
+                >
+                    {work.map((row, index) => timelineElement(row, index))}
+                </VerticalTimeline>
+                : <Box
+                    sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <CircularProgress />
+                </Box>
+            }
+            <Dialog open={toggleModal} onClose={handleClose}>
+                <Box sx={{padding: mobileDialog? 1:5, borderWidth: 2, borderColor: 'black', borderStyle: 'solid'}}>
+                    <Typography variant='h6' sx={{ marginBottom: 2 }}>
+                        {activeWork?.workTitle}
+                    </Typography>
+                    <Typography>
+                        {activeWork?.description}
+                    </Typography>
+                    <Grid container={true} spacing={1} sx={{mt: 3}}>
+                        {activeWork?.img.map((i, index) => 
+                            <Grid key={index} xs={6}>
+                                <RenderImage imgName={i} />
+                            </Grid>)}
+                    </Grid>
+                </Box>
+            </Dialog>
         </Box>
     )
 }

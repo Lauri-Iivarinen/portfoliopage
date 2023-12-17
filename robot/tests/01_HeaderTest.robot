@@ -19,11 +19,11 @@ User can navigate to projects page
 
 *** Keywords ***
 User navigates to work page
-    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/button[2]
+    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/div[2]/button[2]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
 
 User navigates to bio page
-    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/button[1]
+    Click Element   xpath://*[@id="root"]/div/div[1]/header/div/div[2]/button[1]
     Wait Until Element Is Visible   xpath://*[@id="root"]/div/div[2]
 
 

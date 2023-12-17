@@ -7,7 +7,6 @@ import { WorkExperience } from "./WorkExperience"
 import { Projects } from "./Projects"
 import { RenderBio } from "./RenderBio"
 
-
 export const Homepage = () => {
 
     const careerRef = useRef<any>(null)
@@ -67,31 +66,31 @@ export const Homepage = () => {
     return (
         <Box sx={{paddingBottom: 10, width: '100%', overflow: 'hidden'}}>
             <Header 
-            navigateBio={navigateBio} 
-            navigateCareer={navigateCareer} 
-            navigateProjects={navigateProjects}
-            navigateGh={navigateGh}
-            navigateContact={navigateContacts}
+                navigateBio={navigateBio} 
+                navigateCareer={navigateCareer} 
+                navigateProjects={navigateProjects}
+                navigateGh={navigateGh}
+                navigateContact={navigateContacts}
             />
             <Box sx={{ mt: 10, margin: mobile? 1 : 6, marginTop: 4, padding: mobile? 1 : 2, pt: 5}}>
                 <Box>
-                    <RenderBio></RenderBio>
+                    <RenderBio />
                 </Box>
                 <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',}}>
                 </Box>
                 <Box ref={careerRef} id="career">
-                    <WorkExperience></WorkExperience>
+                    <WorkExperience />
                 </Box>
                 <Box ref={projectsRef} id="projects">
-                    <Projects></Projects>
+                    <Projects />
                 </Box>
                 <Box ref={ghRef}>
                 <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1 : 4}}>GitHub</Typography>
-                    <GitHubStats></GitHubStats>
+                    <GitHubStats />
                 </Box>
                 <Box ref={contactRef}>
                     <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1: 4}}>Contact details</Typography>
-                    <UserData></UserData>
+                    <UserData />
                 </Box>
             </Box>
         </Box>
