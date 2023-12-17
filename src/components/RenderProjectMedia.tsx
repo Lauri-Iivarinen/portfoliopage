@@ -17,6 +17,7 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
         setImages(img)
     }, [img])
 
+    //Reset image position when switching mobile<->wide so carousel doesnt get messed up
     useEffect( () => {
         containerRef.current.jumpToIndex(0)
         setStep(0)
@@ -35,59 +36,57 @@ export const RenderProjectMedia: React.FC<Props> = ({ img }) => {
     return (
         <Box sx={{ mt: 1, width: '100%' }}>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
-            <Carousel
-            ref={containerRef}
-            arrows={false}
-            dotsNavigation={false}
-            dotsNavigationInside={true}
-            width={"80%"}
-            height={"300px"}
-            carouselStyle={'flat'}        
-            >
-            {images.map((img, index) => {
-                return (
-                    <Box
-                        key={index}
-                        component="img"
-                        sx={{
-                            objectFit: 'contain',
-                            display: 'block',
-                            maxWidth: '80%',
-                            height: '300px',
-                            margin: 'auto',
-                            borderStyle: 'solid',
-                            borderWidth: 1,
-                            borderRadius: 4,
-                            borderColor: 'rgb(200,200,200)',
-                        }}
-                        src={img}
-                    />
-                )
-            })}
-            </Carousel>
+                <Carousel
+                    ref={containerRef}
+                    arrows={false}
+                    dotsNavigation={false}
+                    dotsNavigationInside={true}
+                    width={"80%"}
+                    height={"300px"}
+                    carouselStyle={'flat'}        
+                >
+                    {images.map((img, index) => {
+                        return (
+                            <Box
+                                key={index}
+                                component="img"
+                                sx={{
+                                    objectFit: 'contain',
+                                    display: 'block',
+                                    maxWidth: '80%',
+                                    height: '300px',
+                                    margin: 'auto',
+                                    borderStyle: 'solid',
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    borderColor: 'rgb(200,200,200)',
+                                }}
+                                src={img}
+                            />
+                        )
+                    })}
+                </Carousel>
             </Box>
             <MobileStepper
-            steps={mobile ? 0 : maxSteps}
-            position="static"
-            activeStep={step}
-            color="inherit"
-            nextButton={
-            <Button
-                size="large"
-                onClick={next}
-                disabled={mobile? false : step === maxSteps - 1}
-            >
-                Next
-            </Button>
-            }
-            backButton={
-            <Button 
-                size="large" 
-                onClick={prev} 
-                disabled={mobile? false : step === 0}>
-                Previous
-            </Button>
-            }
+                steps={mobile ? 0 : maxSteps}
+                position="static"
+                activeStep={step}
+                color="inherit"
+                nextButton={
+                    <Button
+                        size="large"
+                        onClick={next}
+                        disabled={mobile? false : step === maxSteps - 1}
+                    >
+                        Next
+                    </Button>}
+                backButton={
+                    <Button 
+                        size="large" 
+                        onClick={prev} 
+                        disabled={mobile? false : step === 0}>
+                        Previous
+                    </Button>}
             />            
         </Box>
     )

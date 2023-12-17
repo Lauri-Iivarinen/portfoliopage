@@ -7,21 +7,18 @@ import { Carousel } from "react-configurable-carousel";
 
 export const RenderBio = () => {
 
+    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
     const mobile = useMediaQuery('(max-width:900px)')
-
     const [icons, setIcons] = useState([])
     const [loading, setLoading] = useState(true)
-    const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
     const [skills, setSkills] = useState([])
     const [loadingSkills, setLoadingSkills] = useState(true)
-
-    
 
     useEffect(() => {
         const fetchSkills = async () => {
             try {
-                const res = await fetch(`${backend}/api/skills`)
-                const result = await res.json()
+                const response = await fetch(`${backend}/api/skills`)
+                const result = await response.json()
                 setSkills(result)
                 setLoadingSkills(false)
             } catch (error) {
@@ -30,8 +27,8 @@ export const RenderBio = () => {
         }
         const fetchStackPref = async () => {
             try {
-                const res = await fetch(`${backend}/api/stack`)
-                const result = await res.json()
+                const response = await fetch(`${backend}/api/stack`)
+                const result = await response.json()
                 setIcons(result)
                 setLoading(false)
             } catch (error) {
@@ -42,8 +39,6 @@ export const RenderBio = () => {
         fetchSkills()
         fetchStackPref()
     }, [])
-
-    const test = ['a', 'b', 'c', 'd']
 
     return(
         <Grid sx={{marginBottom: 5}} container={true} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -59,23 +54,34 @@ export const RenderBio = () => {
                     My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for an internship.
                     </Typography>
                     <Typography variant='h5' sx={{ marginTop: 2 }}>Skills:</Typography>
-                    {loadingSkills ? <CircularProgress></CircularProgress>: <Box><Carousel
-                    arrows={false}
-                    dotsNavigation={false}
-                    width={'500px'}
-                    height={"115px"}
-                    autoScrollInterval={1800}
-                    autoScrollClickDelay={2000}
-                    carouselStyle={'3d'}
-                    outOfFocusDarken={false}
-                >
-                        {skills.map((item: string, key) => <Box><Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><GetIcon size={30} iconName={item}></GetIcon></Box>{item.split(' ').map(a => <Typography sx={{ textAlign: 'center' }}>{a}</Typography>) }</Box>)}
-                </Carousel></Box>}
+                    {loadingSkills
+                        ? <CircularProgress />
+                        : <Box sx={{cursor: 'default'}}>
+                            <Carousel
+                                arrows={false}
+                                dotsNavigation={false}
+                                dotsNavigationInside={false}
+                                width={mobile?'100%':'500px'}
+                                height={"115px"}
+                                autoScrollInterval={1800}
+                                autoScrollClickDelay={2000}
+                                carouselStyle={'3d'}
+                                outOfFocusDarken={false}
+                            >
+                                {skills.map((item: string, key) =>
+                                    <Box key={key}>
+                                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <GetIcon size={30} iconName={item} />
+                                        </Box>
+                                        {item.split(' ').map((a, i) => <Typography key={i} sx={{ textAlign: 'center' }}>{a}</Typography>)}
+                                    </Box>)}
+                            </Carousel>
+                        </Box>}
                 
                 <Typography variant='h5' sx={{ mt: 3 }}>Favorite technologies:</Typography>
                 {!loading ? <Grid container={true} spacing={2} sx={{display: 'flex'}}>
-                    {icons.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}
-                </Grid> : <CircularProgress></CircularProgress>}
+                    {icons.map((item, key) => <Grid key={key}><GetIcon iconName={item} /></Grid>)}
+                </Grid> : <CircularProgress />}
             </Box>
         </Grid>
         </Grid>

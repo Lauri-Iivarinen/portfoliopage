@@ -29,7 +29,7 @@ export const Projects = () => {
                 setStableData(result)
                 setLoading(false)
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }
         }
         fetchProjects()
@@ -209,10 +209,17 @@ export const Projects = () => {
                                             onMouseEnter={ghLinkHover}
                                             onMouseLeave={ghLinkLeave}
                                         >GitHub</Typography>
-                                        <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>Project type: <GetIcon iconName={project.school ? 'School' : 'Personal'}/></Typography>
-                                        <Typography sx={{ alignItems: 'center', display: 'flex' }}>Group type: <GetIcon iconName={project.school ? 'Group' : 'Alone'}/></Typography>
-                                        <Typography sx={{ marginTop: 2 }}>{project.description}</Typography>
-                                        <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>Technologies used:
+                                        <Typography sx={{ alignItems: 'center', display: 'flex', width: 200 }}>
+                                            Project type: <GetIcon iconName={project.school ? 'School' : 'Personal'} />
+                                        </Typography>
+                                        <Typography sx={{ alignItems: 'center', display: 'flex' }}>
+                                            Group type: <GetIcon iconName={project.school ? 'Group' : 'Alone'}/>
+                                        </Typography>
+                                        <Typography sx={{ marginTop: 2 }}>
+                                            {project.description}
+                                        </Typography>
+                                        <Typography sx={{ color: '#16BAC5', mt: 4, textAlign: 'center' }}>
+                                            Technologies used:
                                         </Typography>
                                         <Grid container={true} spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
                                             {project.technologies.map((item, key) => <Grid key={key}><GetIcon iconName={item}></GetIcon></Grid>)}

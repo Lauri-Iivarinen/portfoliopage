@@ -15,7 +15,6 @@ interface Props {
     size?: number
 }
 
-
 export const GetIcon: React.FC<Props> = ({ iconName, size=30 }) => {
     
     const [icon, setIcon] = useState<any>()
