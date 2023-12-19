@@ -6,7 +6,7 @@ export const GitHubStats = () => {
 
     const ghUsername = 'Lauri-Iivarinen'
     const mobile = useMediaQuery('(max-width:535px)')
-    const [load, setLoad] = useState(true)
+    const [load, setLoad] = useState(false)
     
     useEffect(() => {
         setLoad(false)
@@ -20,7 +20,7 @@ export const GitHubStats = () => {
                     <Grid>
                         <a href={"https://github.com/"+ghUsername}>
                             <img alt="Lauri-Iivarinen Github Stats"
-                                loading='eager'
+                                loading='lazy'
                                 height={mobile ? '120px' : '200px'}
                                 src={`https://github-readme-stats.vercel.app/api?username=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true`}
                             />
@@ -29,7 +29,7 @@ export const GitHubStats = () => {
                     <Grid>
                         <a href={"https://github.com/"+ghUsername}>
                             <img alt="Lauri Iivarinen's Top Languages"
-                                loading='eager'
+                                loading='lazy'
                                 height='200px'
                                 src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUsername}&langs_count=8&count_private=true&layout=donut&theme=catppuccin_latte&hide_border=true`}
                             />
@@ -39,7 +39,7 @@ export const GitHubStats = () => {
                         <a href={"https://github.com/"+ghUsername}>
                             <img alt="Lauris's Streak"
                                 height={mobile ? '120px' : '200px'}
-                                loading='eager'
+                                loading='lazy'
                                 src={`https://github-readme-streak-stats.herokuapp.com/?user=${ghUsername}&show_icons=true&count_private=true&theme=catppuccin_latte&hide_border=true&bg_color=0D1117`}
                             />
                         </a>
