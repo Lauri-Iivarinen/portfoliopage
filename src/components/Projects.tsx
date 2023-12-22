@@ -16,7 +16,7 @@ export const Projects = () => {
     const [loading, setLoading] = useState(true)
     const backend = 'https://iivarinen-lauri-back-0774fd593a23.herokuapp.com'
     const mobile = useMediaQuery('(max-width:900px)')
-    const [rowsPerPage, setRowsPerPage] = useState(3)
+    const [rowsPerPage, setRowsPerPage] = useState(5)
     const [page, setPage] = useState(0)
     const [paginatedData, setPaginatedData] = useState<Project[]>([])
 
@@ -186,7 +186,7 @@ export const Projects = () => {
                 onPageChange={handlePageChange}
                 rowsPerPage={rowsPerPage}
                 onRowsPerPageChange={handleRowsPerPageChange}
-                rowsPerPageOptions={[1, 3, 6, 10, 20]}
+                rowsPerPageOptions={[1, 5, 10, 20]}
             ></TablePagination>
             </Box>    
                 {loading
