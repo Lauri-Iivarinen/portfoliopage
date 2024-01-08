@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SiReact, SiJavascript, SiDiscord, SiTypescript,SiGithubactions, SiExpress, SiSpring, SiPython,SiMui, SiDocker, SiRobotframework } from 'react-icons/si'
+import { SiReact, SiJavascript, SiDiscord, SiTypescript,SiCsharp,SiGithubactions, SiExpress, SiSpring, SiPython,SiMui,SiUnity, SiDocker, SiRobotframework } from 'react-icons/si'
 import { FaBeer } from 'react-icons/fa'
 import { DiJava, DiMysql, DiDatabase } from 'react-icons/di'
 import {PiGameControllerBold} from 'react-icons/pi'
@@ -39,6 +39,10 @@ export const GetIcon: React.FC<Props> = ({ iconName, size=30 }) => {
                 return <SiSpring size={size} color='#16BAC5'></SiSpring>
             case 'Python':
                 return <SiPython size={size} color='#16BAC5'></SiPython>
+            case 'Unity':
+                return <SiUnity size={size} color='#16BAC5'></SiUnity>
+            case 'C#':
+                return <SiCsharp size={size} color='#16BAC5'></SiCsharp>
             case 'Docker':
                 return <SiDocker size={size} color='#16BAC5'></SiDocker>
             case 'Robot Framework':
