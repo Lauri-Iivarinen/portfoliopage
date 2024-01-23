@@ -230,6 +230,17 @@ export const Projects = () => {
                         </Box>
                     )}
                     </Grid>}
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'center'}}>
+            <TablePagination
+                component='div'
+                count={data.length}
+                page={page}
+                onPageChange={handlePageChange}
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={handleRowsPerPageChange}
+                rowsPerPageOptions={[1, 5, 10, 20]}
+            ></TablePagination>
+            </Box> 
         </Box>
     )
 }
