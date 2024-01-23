@@ -28,8 +28,7 @@ export const Header: React.FC<HeaderProps> = ({navigateBio, navigateCareer, navi
       {name: 'BIO', nav: navigateBio!},
       {name: 'CAREER', nav: navigateCareer!},
       {name:'PROJECTS', nav: navigateProjects!},
-      {name: 'GITHUB', nav: navigateGh!},
-      {name: 'CONTACT', nav: navigateContact!}
+      {name: 'CONNECT', nav: navigateGh!},
     ]
 
     setRoutes(routesStatic)
