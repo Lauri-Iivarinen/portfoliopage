@@ -1,11 +1,11 @@
-import { Box, CircularProgress, useMediaQuery } from "@mui/material";
+import { Box, CircularProgress, Link, Typography, useMediaQuery } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import React, { useEffect, useState } from "react";
 
 export const GitHubStats = () => {
 
     const ghUsername = 'Lauri-Iivarinen'
-    const mobile = useMediaQuery('(max-width:535px)')
+    const mobile = useMediaQuery('(max-width:900px)')
     const [load, setLoad] = useState(false)
     
     useEffect(() => {
@@ -13,7 +13,39 @@ export const GitHubStats = () => {
         setTimeout(() => setLoad(true), 1000)
     }, [])
 
+    const linkHover = (e: any) => {
+        e.target.style.cssText = "background-color: #16BAC5; color: #fff;"
+    }
+
+    const linkLeave = (e: any) => {
+        e.target.style.cssText = "background-color: #fff; color: #16BAC5;"
+    }
+
     if (load) {
+        return(
+
+            <Grid container spacing={2} sx={{ marginTop: 5, marginBottom: 2}}>
+                <Grid xs={12} sx={{display: 'flex', alignItems: 'center',justifyContent: 'center'}}>
+                    <Typography
+                        sx={{justifyContent: 'center', textAlign: 'center', width: mobile? '80%': '50%', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#16BAC5' }}
+                        component="a"
+                        href={"https://github.com/Lauri-Iivarinen"}
+                        onMouseEnter={linkHover}
+                        onMouseLeave={linkLeave}
+                    >GitHub</Typography>
+                </Grid>
+                <Grid xs={12} sx={{display: 'flex', alignItems: 'center',justifyContent: 'center'}}>
+                    <Typography
+                        sx={{justifyContent: 'center', textAlign: 'center', width: mobile? '80%': '50%', mr: 1, padding: 1, borderWidth: 1, borderStyle: 'solid', textDecoration: 'none', color: '#16BAC5' }}
+                        component="a"
+                        href={"https://www.linkedin.com/in/lauri-iivarinen/"}
+                        onMouseEnter={linkHover}
+                        onMouseLeave={linkLeave}
+                    >LinkedIn</Typography>
+                </Grid>
+            </Grid>
+
+        )
         return (
             <Box sx={{display:'flex', justifyContent: 'center', marginTop: 5, marginBottom: 2}}>
                 <Grid container={true}>

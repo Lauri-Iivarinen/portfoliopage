@@ -85,11 +85,11 @@ export const Homepage = () => {
                     <Projects />
                 </Box>
                 <Box ref={ghRef}>
-                <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1 : 4}}>GitHub</Typography>
+                <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1 : 4}}>Connect</Typography>
                     <GitHubStats />
                 </Box>
                 <Box ref={contactRef}>
-                    <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1: 4}}>Contact details</Typography>
+                    <Typography variant='h3' sx={{textAlign: 'center', m: mobile? 1: 4}}></Typography>
                     <UserData />
                 </Box>
             </Box>
