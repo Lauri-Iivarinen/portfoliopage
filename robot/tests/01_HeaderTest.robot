@@ -10,7 +10,7 @@ User can navigate to work experience page
 
 User can navigate to bio page
     When User navigates to bio page
-    Wait Until Element Is Visible    xpath://*[contains(text(), "My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for an internship.")]
+    Wait Until Element Is Visible    xpath://*[contains(text(), "My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for a junior opening in the field of IT.")]
 
 User can navigate to projects page
     When User navigates to projects page
