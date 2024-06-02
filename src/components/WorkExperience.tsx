@@ -6,6 +6,7 @@ import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import ChurchIcon from '@mui/icons-material/Church';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import { Work } from "../util/types/Work";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { RenderImage } from "./RenderImage";
@@ -52,6 +53,8 @@ export const WorkExperience = () => {
                 return <ChurchIcon />
             case 'MenuBookIcon':
                 return <MenuBookIcon />
+            case 'LaptopIcon':
+                return <LaptopChromebookIcon />
             default:
                 return <SportsGymnasticsIcon />
         }
