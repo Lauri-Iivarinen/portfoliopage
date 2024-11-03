@@ -51,7 +51,7 @@ export const RenderBio = () => {
             <Box>
                 <Typography variant='h3'> Hello</Typography>
                 <Typography variant='h5'>
-                    My name is Lauri and I'm an enthusiastic, up-and-coming full-stack developer looking for a junior opening in the field of IT.
+                    My name is Lauri and I'm an enthusiastic, IT professional. I currently work as a technical consultant at Apix Messaging Oy.
                     </Typography>
                     <Typography variant='h5' sx={{ marginTop: 2 }}>Skills:</Typography>
                     {loadingSkills
